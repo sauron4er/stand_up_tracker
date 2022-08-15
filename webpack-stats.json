@@ -3,12 +3,12 @@
   "assets": {
     "account.js": {
       "name": "account.js",
-      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\account.js",
+      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\account.js",
       "publicPath": "/static/account.js"
     },
     "home.js": {
       "name": "home.js",
-      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\home.js",
+      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\home.js",
       "publicPath": "/static/home.js"
     }
   },
@@ -20,7 +20,5 @@
       "home.js"
     ]
   },
-  "publicPath": "/static/",
-  "error": "ModuleNotFoundError",
-  "message": "Module not found: Error: Can't resolve 'templates/components/form/loaders' in 'E:\\Code\\stand_up_tracker\\account\\templates\\account\\profile'"
+  "publicPath": "/static/"
 }
