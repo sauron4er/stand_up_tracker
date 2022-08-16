@@ -64,9 +64,14 @@ export function SideBar() {
             {/*<img src='' alt='' />*/}
             <div className='name_job'>
               <div className='name'>Stas</div>
+              <div className='job'>Khramtsov</div>
             </div>
           </div>
+          <i className='bx bx-log-out' id='log_out' />
         </div>
+      </div>
+      <div className='home_content'>
+        <div className='text'>Home Content</div>
       </div>
     </div>
   );
