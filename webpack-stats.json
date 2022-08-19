@@ -10,6 +10,16 @@
       "name": "home.js",
       "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\home.js",
       "publicPath": "/static/home.js"
+    },
+    "account.js.LICENSE.txt": {
+      "name": "account.js.LICENSE.txt",
+      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\account.js.LICENSE.txt",
+      "publicPath": "/static/account.js.LICENSE.txt"
+    },
+    "home.js.LICENSE.txt": {
+      "name": "home.js.LICENSE.txt",
+      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\home.js.LICENSE.txt",
+      "publicPath": "/static/home.js.LICENSE.txt"
     }
   },
   "chunks": {
@@ -20,7 +30,5 @@
       "home.js"
     ]
   },
-  "publicPath": "/static/",
-  "error": "ModuleBuildError",
-  "message": "Module build failed (from ./node_modules/css-loader/dist/cjs.js):\nCssSyntaxError\n\n(29:5) D:\\Робота\\Code\\stand_up_tracker\\static\\css\\sidebar.css Unknown word\n\n  27 | \n  28 | .sidebar.active .logo_content .logo {\n> 29 |     left 100px;\n     |     ^\n  30 |     /*opacity: 1;*/\n  31 | }\n"
+  "publicPath": "/static/"
 }

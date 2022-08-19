@@ -1,7 +1,7 @@
 .sidebar {
     position: fixed;
     top: 0;
-    left: 0;
+    left: -78px;
     height: 100%;
     width: 78px;
     background: var(--color2);
@@ -10,6 +10,7 @@
 }
 
 .sidebar.active {
+    left: 0;
     width: 240px;
 }
 
@@ -44,7 +45,7 @@
 .sidebar #btn {
     position: absolute;
     color: #fff;
-    left: 50%;
+    left: calc(50% + 78px);
     top: 6px;
     font-size: 25px;
     height: 50px;
