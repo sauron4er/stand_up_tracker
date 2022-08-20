@@ -8,8 +8,15 @@ let pathsToClean = ['./static/bundles/*.*'];
 module.exports = {
   context: __dirname,
   entry: {
-    account: './static/webpack_index/account.js',
+    sidebar: './static/webpack_index/sidebar.js',
+    settings: './static/webpack_index/settings.js',
     home: './static/webpack_index/home.js',
+    my_specials: './static/webpack_index/my_specials.js',
+    calendar: './static/webpack_index/calendar.js',
+    library: './static/webpack_index/library.js',
+    search: './static/webpack_index/search.js',
+    profile: './static/webpack_index/profile.js',
+    corporate_pages: './static/webpack_index/corporate_pages.js',
   },
   output: {
     path: path.resolve(__dirname, './static/bundles'), // Should be in STATICFILES_DIRS
@@ -56,9 +63,14 @@ module.exports = {
     alias: {
       static: path.resolve(__dirname, 'static'),
       templates: path.resolve(__dirname, 'templates'),
-      account: path.resolve(__dirname, 'account'),
+      settings: path.resolve(__dirname, 'settings'),
       home: path.resolve(__dirname, 'home'),
-      // stats: path.resolve(__dirname, 'stats')
+      my_specials: path.resolve(__dirname, 'my_specials'),
+      calendar: path.resolve(__dirname, 'calendar'),
+      library: path.resolve(__dirname, 'library'),
+      search: path.resolve(__dirname, 'search'),
+      profile: path.resolve(__dirname, 'profile'),
+      corporate_pages: path.resolve(__dirname, 'corporate_pages'),
     },
   },
 

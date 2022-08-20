@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Library{% endblock %}
+
+{% block content %}
+  <div data-name='library' id="bundle">
+    <script type="text/javascript" src="{% static 'library.js' %}"></script>
+  </div>
+{% endblock %}

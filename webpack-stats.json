@@ -1,33 +1,79 @@
 {
   "status": "done",
   "assets": {
-    "account.js": {
-      "name": "account.js",
-      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\account.js",
-      "publicPath": "/static/account.js"
+    "sidebar.js": {
+      "name": "sidebar.js",
+      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\sidebar.js",
+      "publicPath": "/static/sidebar.js"
+    },
+    "settings.js": {
+      "name": "settings.js",
+      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\settings.js",
+      "publicPath": "/static/settings.js"
     },
     "home.js": {
       "name": "home.js",
-      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\home.js",
+      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\home.js",
       "publicPath": "/static/home.js"
     },
-    "account.js.LICENSE.txt": {
-      "name": "account.js.LICENSE.txt",
-      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\account.js.LICENSE.txt",
-      "publicPath": "/static/account.js.LICENSE.txt"
+    "my_specials.js": {
+      "name": "my_specials.js",
+      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\my_specials.js",
+      "publicPath": "/static/my_specials.js"
     },
-    "home.js.LICENSE.txt": {
-      "name": "home.js.LICENSE.txt",
-      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\home.js.LICENSE.txt",
-      "publicPath": "/static/home.js.LICENSE.txt"
+    "calendar.js": {
+      "name": "calendar.js",
+      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\calendar.js",
+      "publicPath": "/static/calendar.js"
+    },
+    "library.js": {
+      "name": "library.js",
+      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\library.js",
+      "publicPath": "/static/library.js"
+    },
+    "search.js": {
+      "name": "search.js",
+      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\search.js",
+      "publicPath": "/static/search.js"
+    },
+    "profile.js": {
+      "name": "profile.js",
+      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\profile.js",
+      "publicPath": "/static/profile.js"
+    },
+    "corporate_pages.js": {
+      "name": "corporate_pages.js",
+      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\corporate_pages.js",
+      "publicPath": "/static/corporate_pages.js"
     }
   },
   "chunks": {
-    "account": [
-      "account.js"
+    "sidebar": [
+      "sidebar.js"
+    ],
+    "settings": [
+      "settings.js"
     ],
     "home": [
       "home.js"
+    ],
+    "my_specials": [
+      "my_specials.js"
+    ],
+    "calendar": [
+      "calendar.js"
+    ],
+    "library": [
+      "library.js"
+    ],
+    "search": [
+      "search.js"
+    ],
+    "profile": [
+      "profile.js"
+    ],
+    "corporate_pages": [
+      "corporate_pages.js"
     ]
   },
   "publicPath": "/static/"

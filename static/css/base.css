@@ -14,11 +14,13 @@ body {
   background-size: cover;
 }
 
-.container {
-  margin-top: 5px;
-  margin-bottom: 5px;
+.main {
+  width: min(100vw, max(60vw, 600px));
+  margin: 5px auto;
+  padding: 5px 10px;
   background: var(--color5);
   box-shadow: 3px 2px 10px var(--color3);
+
 }
 
 .css_full_width {
@@ -32,6 +34,7 @@ body {
   line-height: 60px;
   text-align: right;
   padding-right: 20px;
+  cursor: default;
 }
 
 .navbar-toggler-icon {

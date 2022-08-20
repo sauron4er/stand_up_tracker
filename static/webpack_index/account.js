@@ -1,1 +1,0 @@
-import 'account/templates/account/index'

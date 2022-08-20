@@ -1,14 +1,12 @@
 import React from 'react';
 import {createRoot} from 'react-dom/client';
 import Home from './home';
-import {SideBar} from '../../../templates/components/sidebar';
 
 function HomeApp() {
   const div = document.getElementById('bundle');
 
   return (
     <>
-      <SideBar />
       <Choose>
         <When condition={div.dataset.name === 'home'}>
           <Home />

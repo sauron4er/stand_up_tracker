@@ -2,9 +2,9 @@ import React from 'react';
 import useSetState from 'templates/hooks/useSetState';
 import 'static/css/sidebar.css';
 
-export function SideBar() {
+function SideBar() {
   const [state, setState] = useSetState({
-    menu_opened: false
+    menu_opened: window.innerWidth > 600
   });
 
   function onMenuButtonClick() {
@@ -26,49 +26,56 @@ export function SideBar() {
       </div>
       <ul className='nav_list'>
         <li>
-          <a href='#'>
+          <a href={`${window.location.origin}/search`}>
             <i className='bx bx-search-alt-2' onClick={onSearchButtonClick} />
             <input className='search-input' type='text' placeholder='Search...' />
           </a>
           <span className='tooltip'>Search</span>
         </li>
         <li>
-          <a href='#'>
+          <a href={`${window.location.origin}/my_specials/`}>
             <i className='bx bx-play-circle' />
             <span className='links_name'>My Specials</span>
           </a>
           <span className='tooltip'>My Specials</span>
         </li>
         <li>
-          <a href='#'>
+          <a href={`${window.location.origin}/calendar/`}>
             <i className='bx bxs-calendar' />
-            <span className='links_name'>My Calendar</span>
+            <span className='links_name'>Calendar</span>
           </a>
-          <span className='tooltip'>My Calendar</span>
+          <span className='tooltip'>Calendar</span>
         </li>
         <li>
-          <a href='#'>
+          <a href={`${window.location.origin}/library/`}>
             <i className='bx bx-library' />
             <span className='links_name'>Library</span>
           </a>
           <span className='tooltip'>Library</span>
         </li>
         <li>
-          <a href='#'>
+          <a href={`${window.location.origin}/profile/`}>
+            <i className='bx bx-glasses-alt'></i>
+            <span className='links_name'>Profile</span>
+          </a>
+          <span className='tooltip'>Profile</span>
+        </li>
+        <li>
+          <a href={`${window.location.origin}/subscribe`}>
             <i className='bx bx-cart-add' />
             <span className='links_name'>Subscribe</span>
           </a>
           <span className='tooltip'>Subscribe</span>
         </li>
         <li>
-          <a href='#'>
+          <a href={`${window.location.origin}/contact_us`}>
             <i className='bx bx-message-alt-detail' />
             <span className='links_name'>Contact Us</span>
           </a>
           <span className='tooltip'>Contact Us</span>
         </li>
         <li>
-          <a href='#'>
+          <a href={`${window.location.origin}/settings`}>
             <i className='bx bx-cog' />
             <span className='links_name'>Settings</span>
           </a>
@@ -90,3 +97,5 @@ export function SideBar() {
     </div>
   );
 }
+
+export default SideBar;

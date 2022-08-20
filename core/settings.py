@@ -22,8 +22,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'account',
+    'settings',
+    'my_specials',
+    'calendar',
+    'library',
+    'profile',
+    'corporate_pages',
     'home',
+
 
     'widget_tweaks',
     # 'webpack_loader',

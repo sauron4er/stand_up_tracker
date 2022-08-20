@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Calendar{% endblock %}
+
+{% block content %}
+  <div data-name='calendar' id="bundle">
+    <script type="text/javascript" src="{% static 'calendar.js' %}"></script>
+  </div>
+{% endblock %}calendar
