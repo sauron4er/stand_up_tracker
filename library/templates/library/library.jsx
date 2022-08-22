@@ -9,7 +9,9 @@ function Library() {
 
   return (
     <>
-     Library
+      <h4>Comedians database</h4>
+      <div>Filter</div>
+      <div>List of cards of comedians</div>
     </>
   );
 }

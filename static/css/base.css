@@ -18,8 +18,8 @@ body {
   width: min(100vw, max(60vw, 600px));
   margin: 5px auto;
   padding: 5px 10px;
-  background: var(--color5);
-  box-shadow: 3px 2px 10px var(--color3);
+  /*background: var(--color5);*/
+  /*box-shadow: 3px 2px 10px var(--color3);*/
 
 }
 

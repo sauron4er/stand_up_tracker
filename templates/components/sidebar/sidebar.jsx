@@ -49,9 +49,9 @@ function SideBar() {
         <li>
           <a href={`${window.location.origin}/library/`}>
             <i className='bx bx-library' />
-            <span className='links_name'>Library</span>
+            <span className='links_name'>Comedians</span>
           </a>
-          <span className='tooltip'>Library</span>
+          <span className='tooltip'>Comedians</span>
         </li>
         <li>
           <a href={`${window.location.origin}/profile/`}>
