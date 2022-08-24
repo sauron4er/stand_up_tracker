@@ -20,3 +20,7 @@ class Streaming(models.Model):
 
 class Special(models.Model):
     name = models.CharField(max_length=30)
+    duration = models.DurationField()
+    release_date = models.DateField(null=True)
+    streaming = models.ForeignKey(Streaming, related_name='specials', on_delete=models.RESTRICT, null=True)
+    web_address = URLField(max_length=200, null=True)
