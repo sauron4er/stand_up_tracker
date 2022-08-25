@@ -19,7 +19,6 @@ urlpatterns = [
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
     re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
 
-    path(r'settings/', include('settings.urls', namespace='settings')),
     path(r'home/', include('home.urls', namespace='home')),
     path(r'my_specials/', include('my_specials.urls', namespace='my_specials')),
     path(r'calendar/', include('calendar.urls', namespace='calendar')),

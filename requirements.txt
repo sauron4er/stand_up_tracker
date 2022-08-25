@@ -2,3 +2,4 @@ Django==4.1
 # django-webpack-loader==1.6.0
 django-widget-tweaks==1.4.12
 mysqlclient==2.1.1
+Pillow==9.2.0  # for ImageField in models
