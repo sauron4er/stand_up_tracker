@@ -1,0 +1,26 @@
+button#comedians, button#specials {
+  cursor: pointer;
+  /*padding: 10px 20px;*/
+  margin: 0 2px;
+  background: var(--color4);
+  color: #fff;
+  border: 1px solid var(--color4);
+  border-radius: 3px;
+}
+
+button#comedians.active, button#specials.active {
+  background: #fffffff6;
+  color: #000;
+  border-top: 3px solid var(--color4);
+}
+
+.library-content {
+  padding-top: 20px;
+  /*box-shadow: 0 2rem 2rem #00000080;*/
+  /*min-height:200px;*/
+  /*width:100%;*/
+  /*max-width:500px;*/
+  /*border-radius:3px;*/
+  /*overflow:hidden;*/
+  /*padding:20px;*/
+}

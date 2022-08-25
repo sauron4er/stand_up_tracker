@@ -1,0 +1,1 @@
+import 'corporate_pages/templates/corporate_pages'

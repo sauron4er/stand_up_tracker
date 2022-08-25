@@ -1,0 +1,1 @@
+import 'profile/templates/profile/index'

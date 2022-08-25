@@ -1,0 +1,1 @@
+import 'my_specials/templates/my_specials/index'

@@ -31,6 +31,16 @@
       "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\search.js",
       "publicPath": "/static/search.js"
     },
+    "comedians.js": {
+      "name": "comedians.js",
+      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\comedians.js",
+      "publicPath": "/static/comedians.js"
+    },
+    "specials.js": {
+      "name": "specials.js",
+      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\specials.js",
+      "publicPath": "/static/specials.js"
+    },
     "profile.js": {
       "name": "profile.js",
       "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\profile.js",
@@ -61,6 +71,12 @@
     "search": [
       "search.js"
     ],
+    "comedians": [
+      "comedians.js"
+    ],
+    "specials": [
+      "specials.js"
+    ],
     "profile": [
       "profile.js"
     ],
@@ -68,5 +84,7 @@
       "corporate_pages.js"
     ]
   },
-  "publicPath": "/static/"
+  "publicPath": "/static/",
+  "error": "ModuleBuildError",
+  "message": "Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: D:\\Робота\\Code\\stand_up_tracker\\library\\templates\\library\\library.jsx: Expected corresponding JSX closing tag for <input>. (42:6)\n\n  40 |                 </div>\n  41 |               </div>\n> 42 |       </div>\n     |       ^\n  43 |       {/*<Choose>*/}\n  44 |       {/*  <When condition={state.view === 'comedians'}>*/}\n  45 |       {/*    <Comedians />*/}\n    at instantiate (D:\\Робота\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:72:32)\n    at constructor (D:\\Робота\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:366:12)\n    at JSXParserMixin.raise (D:\\Робота\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:3453:19)\n    at JSXParserMixin.jsxParseElementAt (D:\\Робота\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:8124:16)\n    at JSXParserMixin.jsxParseElementAt (D:\\Робота\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:8086:32)\n    at JSXParserMixin.jsxParseElementAt (D:\\Робота\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:8086:32)\n    at JSXParserMixin.jsxParseElementAt (D:\\Робота\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:8086:32)\n    at JSXParserMixin.jsxParseElementAt (D:\\Робота\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:8086:32)\n    at JSXParserMixin.jsxParseElement (D:\\Робота\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:8155:17)\n    at JSXParserMixin.parseExprAtom (D:\\Робота\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:8169:19)"
 }

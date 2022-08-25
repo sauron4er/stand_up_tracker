@@ -4,7 +4,8 @@ import 'static/css/sidebar.css';
 
 function SideBar() {
   const [state, setState] = useSetState({
-    menu_opened: window.innerWidth > 600
+    menu_opened: window.innerWidth > 600,
+    pathname: window.location.pathname.replace(/^\/|\/$/g, '')
   });
 
   function onMenuButtonClick() {
@@ -26,61 +27,61 @@ function SideBar() {
       </div>
       <ul className='nav_list'>
         <li>
-          <a href={`${window.location.origin}/search`}>
+          <a href='#'>
             <i className='bx bx-search-alt-2' onClick={onSearchButtonClick} />
-            <input className='search-input' type='text' placeholder='Search...' />
           </a>
+          <input className='search-input' type='text' placeholder='Search...' />
           <span className='tooltip'>Search</span>
         </li>
         <li>
-          <a href={`${window.location.origin}/my_specials/`}>
+          <a href={`${window.location.origin}/my_specials/`} className={state.pathname === 'my_specials' ? 'active' : null}>
             <i className='bx bx-play-circle' />
             <span className='links_name'>My Specials</span>
           </a>
           <span className='tooltip'>My Specials</span>
         </li>
         <li>
-          <a href={`${window.location.origin}/calendar/`}>
+          <a href={`${window.location.origin}/calendar/`} className={state.pathname === 'calendar' ? 'active' : null}>
             <i className='bx bxs-calendar' />
             <span className='links_name'>Calendar</span>
           </a>
           <span className='tooltip'>Calendar</span>
         </li>
         <li>
-          <a href={`${window.location.origin}/library/`}>
+          <a href={`${window.location.origin}/library/`} className={state.pathname === 'library' ? 'active' : null}>
             <i className='bx bx-library' />
-            <span className='links_name'>Comedians</span>
+            <span className='links_name'>Library</span>
           </a>
-          <span className='tooltip'>Comedians</span>
+          <span className='tooltip'>Library</span>
         </li>
         <li>
-          <a href={`${window.location.origin}/profile/`}>
+          <a href={`${window.location.origin}/profile/`} className={state.pathname === 'profile' ? 'active' : null}>
             <i className='bx bx-glasses-alt'></i>
             <span className='links_name'>Profile</span>
           </a>
           <span className='tooltip'>Profile</span>
         </li>
         <li>
-          <a href={`${window.location.origin}/subscribe`}>
+          <a href={`${window.location.origin}/subscribe`} className={state.pathname === 'subscribe' ? 'active' : null}>
             <i className='bx bx-cart-add' />
             <span className='links_name'>Subscribe</span>
           </a>
           <span className='tooltip'>Subscribe</span>
         </li>
         <li>
-          <a href={`${window.location.origin}/contact_us`}>
+          <a href={`${window.location.origin}/contact_us`} className={state.pathname === 'contact_us' ? 'active' : null}>
             <i className='bx bx-message-alt-detail' />
             <span className='links_name'>Contact Us</span>
           </a>
           <span className='tooltip'>Contact Us</span>
         </li>
-        <li>
-          <a href='#'>
-            <i className='bx bx-cog' />
-            <span className='links_name'>Settings</span>
-          </a>
-          <span className='tooltip'>Settings</span>
-        </li>
+        {/*<li>*/}
+        {/*  <a href='#'>*/}
+        {/*    <i className='bx bx-cog' />*/}
+        {/*    <span className='links_name'>Settings</span>*/}
+        {/*  </a>*/}
+        {/*  <span className='tooltip'>Settings</span>*/}
+        {/*</li>*/}
       </ul>
       <div className='profile_content'>
         <div className='profile'>
