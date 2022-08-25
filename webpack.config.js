@@ -9,7 +9,6 @@ module.exports = {
   context: __dirname,
   entry: {
     sidebar: './static/webpack_index/sidebar.js',
-    settings: './static/webpack_index/settings.js',
     home: './static/webpack_index/home.js',
     my_specials: './static/webpack_index/my_specials.js',
     calendar: './static/webpack_index/calendar.js',
@@ -63,7 +62,6 @@ module.exports = {
     alias: {
       static: path.resolve(__dirname, 'static'),
       templates: path.resolve(__dirname, 'templates'),
-      settings: path.resolve(__dirname, 'settings'),
       home: path.resolve(__dirname, 'home'),
       my_specials: path.resolve(__dirname, 'my_specials'),
       calendar: path.resolve(__dirname, 'calendar'),

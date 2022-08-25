@@ -75,7 +75,7 @@ function SideBar() {
           <span className='tooltip'>Contact Us</span>
         </li>
         <li>
-          <a href={`${window.location.origin}/settings`}>
+          <a href='#'>
             <i className='bx bx-cog' />
             <span className='links_name'>Settings</span>
           </a>
