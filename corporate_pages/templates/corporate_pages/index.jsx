@@ -7,7 +7,7 @@ function CorporatePagesApp() {
   const div = document.getElementById('bundle');
 
   return (
-    <>
+    <React.StrictMode>
       <Choose>
         <When condition={div.dataset.name === 'subscribe'}>
           <Subscribe />
@@ -16,7 +16,7 @@ function CorporatePagesApp() {
           <ContactUs />
         </When>
       </Choose>
-    </>
+    </React.StrictMode>
   );
 }
 

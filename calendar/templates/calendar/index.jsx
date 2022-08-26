@@ -6,13 +6,13 @@ function CalendarApp() {
   const div = document.getElementById('bundle');
 
   return (
-    <>
+    <React.StrictMode>
       <Choose>
         <When condition={div.dataset.name === 'calendar'}>
           <Calendar />
         </When>
       </Choose>
-    </>
+    </React.StrictMode>
   );
 }
 

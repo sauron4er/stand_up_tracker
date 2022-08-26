@@ -6,13 +6,13 @@ function ProfileApp() {
   const div = document.getElementById('bundle');
 
   return (
-    <>
+    <React.StrictMode>
       <Choose>
         <When condition={div.dataset.name === 'profile'}>
           <Profile />
         </When>
       </Choose>
-    </>
+    </React.StrictMode>
   );
 }
 

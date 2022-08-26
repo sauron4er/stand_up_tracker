@@ -6,13 +6,13 @@ function LibraryApp() {
   const div = document.getElementById('bundle');
 
   return (
-    <>
+    <React.StrictMode>
       <Choose>
         <When condition={div.dataset.name === 'library'}>
           <Library />
         </When>
       </Choose>
-    </>
+    </React.StrictMode>
   );
 }
 

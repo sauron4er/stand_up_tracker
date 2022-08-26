@@ -11,7 +11,7 @@ button#comedians, button#specials {
 button#comedians.active, button#specials.active {
   background: #fffffff6;
   color: #000;
-  border-top: 3px solid var(--color4);
+  border-top: 3px solid var(--color3);
 }
 
 .library-content {

@@ -6,13 +6,13 @@ function HomeApp() {
   const div = document.getElementById('bundle');
 
   return (
-    <>
+    <React.StrictMode>
       <Choose>
         <When condition={div.dataset.name === 'home'}>
           <Home />
         </When>
       </Choose>
-    </>
+    </React.StrictMode>
   );
 }
 

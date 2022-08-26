@@ -6,13 +6,13 @@ function MySpecialsApp() {
   const div = document.getElementById('bundle');
 
   return (
-    <>
+    <React.StrictMode>
       <Choose>
         <When condition={div.dataset.name === 'my_specials'}>
           <MySpecials />
         </When>
       </Choose>
-    </>
+    </React.StrictMode>
   );
 }
 
