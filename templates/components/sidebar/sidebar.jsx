@@ -4,7 +4,7 @@ import 'static/css/sidebar.css';
 
 function SideBar() {
   const [state, setState] = useSetState({
-    menu_opened: window.innerWidth > 600,
+    menu_opened: window.innerWidth > 1250,
     pathname: window.location.pathname.replace(/^\/|\/$/g, '')
   });
 
