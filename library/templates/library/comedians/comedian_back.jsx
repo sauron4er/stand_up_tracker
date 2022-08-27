@@ -6,8 +6,10 @@ function ComedianBack() {
   const [state, setState] = useSetState({});
 
   return (
-    <div className='comedian-back'>
-      List of specials
+    <div className='card__side card__side--back'>
+      <div className='card__description'>
+        <div className='comedian-back'>List of specials</div>
+      </div>
     </div>
   );
 }

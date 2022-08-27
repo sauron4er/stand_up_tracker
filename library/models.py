@@ -3,12 +3,12 @@ from django.db.models import URLField
 from profile.models import Account
 
 
-class Comic(models.Model):
+class Comedian(models.Model):
     name = models.CharField(max_length=30)
     rating = models.DecimalField(max_digits=2, decimal_places=1)
     born = models.DateField(null=True)
     died = models.DateField(null=True)
-    picture = models.ImageField(upload_to='comics')
+    picture = models.ImageField(upload_to='comedians')
     wiki_url = URLField(max_length=200)
     is_active = models.BooleanField(default=True)
 
@@ -41,13 +41,13 @@ class Special(models.Model):
 
 class Special_Cast(models.Model):
     special = models.ForeignKey(Special, related_name='cast', on_delete=models.RESTRICT)
-    comic = models.ForeignKey(Comic, related_name='specials', on_delete=models.RESTRICT)
+    comedian = models.ForeignKey(Comedian, related_name='specials', on_delete=models.RESTRICT)
     is_active = models.BooleanField(default=True)
 
 
-class Comic_Comments(models.Model):
-    comic = models.ForeignKey(Comic, related_name='comments', on_delete=models.RESTRICT)
-    user = models.ForeignKey(Account, related_name='comic_comments', on_delete=models.RESTRICT)
+class Comedian_Comments(models.Model):
+    comedian = models.ForeignKey(Comedian, related_name='comments', on_delete=models.RESTRICT)
+    user = models.ForeignKey(Account, related_name='comedians_comments', on_delete=models.RESTRICT)
     comment = models.TextField(max_length=3000)
     answer_to = models.ForeignKey('self', related_name='responses', null=True, on_delete=models.RESTRICT)
     is_active = models.BooleanField(default=True)
@@ -61,9 +61,9 @@ class Special_Comments(models.Model):
     is_active = models.BooleanField(default=True)
 
 
-class User_Comic_Rating(models.Model):
-    user = models.ForeignKey(Account, related_name='comic_ratings', on_delete=models.RESTRICT)
-    comic = models.ForeignKey(Comic, related_name='user_ratings', on_delete=models.RESTRICT)
+class User_Comedian_Rating(models.Model):
+    user = models.ForeignKey(Account, related_name='comedian_ratings', on_delete=models.RESTRICT)
+    comedian = models.ForeignKey(Comedian, related_name='user_ratings', on_delete=models.RESTRICT)
     rating = models.DecimalField(max_digits=2, decimal_places=1)
     note = models.TextField(max_length=3000, null=True)
 
@@ -75,9 +75,9 @@ class User_Special_Rating(models.Model):
     note = models.TextField(max_length=3000, null=True)
 
 
-class Favorite_Comics(models.Model):
-    user = models.ForeignKey(Account, related_name='favorite_comics', on_delete=models.RESTRICT)
-    comic = models.ForeignKey(Comic, related_name='in_favorites', on_delete=models.RESTRICT)
+class Favorite_Comedians(models.Model):
+    user = models.ForeignKey(Account, related_name='favorite_comedians', on_delete=models.RESTRICT)
+    comedian = models.ForeignKey(Comedian, related_name='in_favorites', on_delete=models.RESTRICT)
     note = models.TextField(max_length=3000, null=True)
 
 

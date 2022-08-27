@@ -5,7 +5,19 @@ import Comedian from 'library/templates/library/comedians/comedian';
 import 'static/css/comedians_cards.css';
 
 function Comedians() {
-  const [state, setState] = useSetState({});
+  const [state, setState] = useSetState({
+    comedian: {
+      info: {
+        name: 'Jerry Seinfeld',
+        born: 'April 29, 1954',
+        rating: '4.8',
+        died: '',
+        picture: 'files/media/comedians/Jerry_Seinfeld',
+        wiki_url: 'https://en.wikipedia.org/wiki/Jerry_Seinfeld'
+      },
+      specials: []
+    }
+  });
 
   return (
     <>
@@ -13,16 +25,7 @@ function Comedians() {
       <div>Search</div>
 
       <div className='cards'>
-        <Comedian />
-        <Comedian />
-        <Comedian />
-        <Comedian />
-        <Comedian />
-        <Comedian />
-        <Comedian />
-        <Comedian />
-        <Comedian />
-        <Comedian />
+        <Comedian comedian={state.comedian} />
       </div>
     </>
   );
