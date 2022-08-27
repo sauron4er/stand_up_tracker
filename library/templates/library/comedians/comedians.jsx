@@ -24,9 +24,20 @@ function Comedians() {
       <h4>Comedians database</h4>
       <div>Search</div>
 
-      <div className='cards'>
+      <ul className='cards'>
         <Comedian comedian={state.comedian} />
-      </div>
+        <Comedian comedian={state.comedian} />
+        <Comedian comedian={state.comedian} />
+        <Comedian comedian={state.comedian} />
+        <Comedian comedian={state.comedian} />
+        <Comedian comedian={state.comedian} />
+        <Comedian comedian={state.comedian} />
+        <Comedian comedian={state.comedian} />
+      </ul>
+
+      {/*<div className='cards'>*/}
+
+      {/*</div>*/}
     </>
   );
 }

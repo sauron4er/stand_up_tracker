@@ -4,27 +4,26 @@
 /*  box-sizing: border-box;*/
 /*}*/
 
-body {
-    overflow: auto;
-}
-
-
 .cards {
-  display: flex;
+  /*display: flex;*/
   justify-content: space-around;
   flex-wrap: wrap;
   overflow-y: auto;
-  padding-bottom: 2em;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 0 0 2em 0;
+  list-style-type: none;
 }
 
 .c_card {
   will-change: transform;
-  /*width: min(23%, 300px);*/
-  width: min(90vw, max(30%, 250px));
   position: relative;
+  display: block;
   height: 25em;
   perspective: 150em;
-  margin: 0.7em 0.5em;
+  overflow: hidden;
 }
 
 .card__side {

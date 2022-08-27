@@ -14,10 +14,16 @@ function Comedian(props) {
   }
 
   return (
-    <div className={`c_card ${state.clicked ? 'clicked' : ''}`} onClick={onCardClick}>
-      <ComedianFront info={props.comedian.info} />
-      <ComedianBack specials={props.comedian.specials} />
-    </div>
+    <li>
+      <div className={`c_card ${state.clicked ? 'clicked' : ''}`} onClick={onCardClick}>
+        <ComedianFront info={props.comedian.info} />
+        <ComedianBack specials={props.comedian.specials} />
+      </div>
+    </li>
+    // <div className={`c_card ${state.clicked ? 'clicked' : ''}`} onClick={onCardClick}>
+    //   <ComedianFront info={props.comedian.info} />
+    //   <ComedianBack specials={props.comedian.specials} />
+    // </div>
   );
 }
 
