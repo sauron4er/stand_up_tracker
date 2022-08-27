@@ -84,7 +84,5 @@
       "corporate_pages.js"
     ]
   },
-  "publicPath": "/static/",
-  "error": "ModuleBuildError",
-  "message": "Module build failed (from ./node_modules/css-loader/dist/cjs.js):\nCssSyntaxError\n\n(26:1) E:\\Code\\stand_up_tracker\\static\\css\\comedians_cards.css Unclosed block\n\n  24 | }\n  25 | \n> 26 | .c_card {\n     | ^\n  27 |   will-change: transform;\n  28 |   /*width: min(23%, 300px);*/\n"
+  "publicPath": "/static/"
 }
