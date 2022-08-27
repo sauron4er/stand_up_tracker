@@ -8,9 +8,11 @@ function ComedianFront(props) {
   return (
     <div className='card__side card__side--front' style={{backgroundImage: 'url(/media/comedians/Jerry_Seinfeld.jpg)'}}>
     {/*<div className='card__side card__side--front'>*/}
-      <div className='card__description'>
-        {/*<div style={{backgroundImage: 'url(/media/comedians/Jerry_Seinfeld.jpg)'}}></div>*/}
+      <div className='outline'>
+        <div className='comedian_info'>
+          {/*<div style={{backgroundImage: 'url(/media/comedians/Jerry_Seinfeld.jpg)'}}></div>*/}
           <div className='name'>{props.info.name}</div>
+        </div>
       </div>
     </div>
   );
