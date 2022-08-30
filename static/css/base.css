@@ -13,8 +13,6 @@ body {
   overflow: auto;
 
   font-family: 'Nunito', sans-serif;
-  /*background: var(--background);*/
-  /*background-image: url(/static/seinfield_background.jpeg);*/
   background-size: cover;
 }
 
@@ -38,6 +36,8 @@ body {
 }
 
 .top-line {
+  position: -webkit-sticky;
+  position: sticky;
   color: #fff;
   background: var(--color3);
   height: 60px;
@@ -45,6 +45,8 @@ body {
   text-align: right;
   padding-right: 20px;
   cursor: default;
+  top: 0;
+  z-index: 1;
 }
 
 .navbar-toggler-icon {

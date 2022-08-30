@@ -10,9 +10,9 @@ function Comedians() {
       info: {
         name: 'Jerry Seinfeld',
         born: 'April 29, 1954',
-        rating: '4.8',
+        rating: '4.7',
         died: '',
-        picture: 'files/media/comedians/Jerry_Seinfeld',
+        picture: 'Jerry_Seinfeld.jpg',
         wiki_url: 'https://en.wikipedia.org/wiki/Jerry_Seinfeld'
       },
       specials: []
@@ -34,10 +34,6 @@ function Comedians() {
         <Comedian comedian={state.comedian} />
         <Comedian comedian={state.comedian} />
       </ul>
-
-      {/*<div className='cards'>*/}
-
-      {/*</div>*/}
     </>
   );
 }
