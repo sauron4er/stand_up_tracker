@@ -10,9 +10,9 @@ function ComedianFront(props) {
     <div className='card__side card__side--front' style={{backgroundImage: `url(/media/comedians/${props.info.picture})`}}>
       <div className='card__side--front__outline'>
         <div className='card__side--front__info'>
-          <Rating id={props.info.id} rating_global={props.info.rating_global} rating_user={props.info.rating_user} />
           <div className='card__side--front__footer'>
             <div className='card__side--front__name'>{props.info.name}</div>
+            <Rating id={props.info.id} rating_global={props.info.rating_global} rating_user={props.info.rating_user} />
           </div>
         </div>
       </div>

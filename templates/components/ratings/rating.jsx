@@ -3,26 +3,36 @@ import useSetState from 'templates/hooks/useSetState';
 import 'static/css/rating.css';
 
 function Rating(props) {
-  const [state, setState] = useSetState({});
+  const [state, setState] = useSetState({
+    rating: 0
+  });
 
-  function onClick(e) {
-    e.stopPropagation();
+  function editUserRating(rating) {
+    setState({rating});
   }
 
   return (
     <div className='rating'>
-      <form action=''>
-        <input onClick={onClick} className='star star-5' id={`star-5-${props.id}`} type='radio' name='star' />
-        <label onClick={onClick} className='star star-5' for={`star-5-${props.id}`}></label>
-        <input onClick={onClick} className='star star-4' id={`star-4-${props.id}`} type='radio' name='star' />
-        <label onClick={onClick} className='star star-4' for={`star-4-${props.id}`}></label>
-        <input onClick={onClick} className='star star-3' id={`star-3-${props.id}`} type='radio' name='star' />
-        <label onClick={onClick} className='star star-3' for={`star-3-${props.id}`}></label>
-        <input onClick={onClick} className='star star-2' id={`star-2-${props.id}`} type='radio' name='star' />
-        <label onClick={onClick} className='star star-2' for={`star-2-${props.id}`}></label>
-        <input onClick={onClick} className='star star-1' id={`star-1-${props.id}`} type='radio' name='star' />
-        <label onClick={onClick} className='star star-1' for={`star-1-${props.id}`}></label>
-      </form>
+      <input className='star star-5' id={`star-5-${props.id}`} type='radio' name='star' onChange={(e) => editUserRating(5)} />
+      <label className='star star-5' htmlFor={`star-5-${props.id}`}>
+        <i className='bx bx-star' />
+      </label>
+      <input className='star star-4' id={`star-4-${props.id}`} type='radio' name='star' onChange={(e) => editUserRating(4)} />
+      <label className='star star-4' htmlFor={`star-4-${props.id}`}>
+        <i className='bx bx-star' />
+      </label>
+      <input className='star star-3' id={`star-3-${props.id}`} type='radio' name='star' onChange={(e) => editUserRating(3)} />
+      <label className='star star-3' htmlFor={`star-3-${props.id}`}>
+        <i className='bx bx-star' />
+      </label>
+      <input className='star star-2' id={`star-2-${props.id}`} type='radio' name='star' onChange={(e) => editUserRating(2)} />
+      <label className='star star-2' htmlFor={`star-2-${props.id}`}>
+        <i className='bx bx-star' />
+      </label>
+      <input className='star star-1' id={`star-1-${props.id}`} type='radio' name='star' onChange={(e) => editUserRating(1)} />
+      <label className='star star-1' htmlFor={`star-1-${props.id}`}>
+        <i className='bx bx-star' />
+      </label>
     </div>
   );
 }

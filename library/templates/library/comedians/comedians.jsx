@@ -84,7 +84,7 @@ function Comedians() {
 
       <ul className='cards'>
         <For each='comedian' of={state.comedians} index='idx'>
-          <Comedian comedian={comedian} />
+          <Comedian key={idx} comedian={comedian} />
         </For>
       </ul>
     </>

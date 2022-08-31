@@ -1,53 +1,38 @@
-/**{*/
-/*  margin: 0;*/
-/*  padding: 0;*/
-/*}*/
-
 .rating{
   /*width: 270px;*/
-  display: inline-block;
-  margin-bottom: 20px;
-  /*display: block;*/
+  display: flex;
+  flex-direction: row-reverse;
+  /*justify-content: flex-end;*/
+  /*margin-bottom: 20px;*/
 }
 
 input.star{
   display: none;
 }
 
-label.star {
+.bx-star {
   float: right;
-  padding: 10px;
-  font-size: 36px;
+  padding: 5px;
+  font-size: 1.5rem;
   color: #444;
   transition: all .2s;
+  margin-bottom: 1em;
 }
 
-input.star:checked ~ label.star:before {
-  content: url('/static/bxs-star.svg');
+input.star:checked ~ label > .bx-star {
   color: #FD4;
   transition: all .25s;
 }
 
-
-input.star-5:checked ~ label.star:before {
-  color:#FE7;
-  text-shadow: 0 0 20px #952;
+input.star-5:checked ~ label > .bx-star {
+  color: #FCEF94;
+  text-shadow: 1px 1px 20px #FFFFFF;
 }
 
-input.star-1:checked ~ label.star:before {
+input.star-1:checked ~ label > .bx-star {
   color: #F62;
 }
 
-label.star:hover{
+label > .bx-star:hover{
   transform: rotate(-15deg) scale(1.3);
-}
-
-label.star:before{
-  content: url('/static/bx-star.svg');
-  /*font-family: FontAwesome;*/
-}
-
-input.star:checked ~ .rev-box{
-  height: 125px;
-  overflow: visible;
 }
