@@ -26,6 +26,16 @@
       "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\library.js",
       "publicPath": "/static/library.js"
     },
+    "6e746d8792f411688d9d.svg": {
+      "name": "6e746d8792f411688d9d.svg",
+      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\6e746d8792f411688d9d.svg",
+      "publicPath": "/static/6e746d8792f411688d9d.svg"
+    },
+    "753c4d970f7842e6b795.svg": {
+      "name": "753c4d970f7842e6b795.svg",
+      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\753c4d970f7842e6b795.svg",
+      "publicPath": "/static/753c4d970f7842e6b795.svg"
+    },
     "search.js": {
       "name": "search.js",
       "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\search.js",

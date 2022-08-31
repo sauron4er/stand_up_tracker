@@ -7,6 +7,7 @@
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /*350*/
   gap: 0 2rem;
   overflow-y: auto;
   padding: 0 0 1em 0;
@@ -35,7 +36,7 @@
   outline-offset: -0.4em;
 }
 
-.outline {
+.card__side--front__outline {
   position: absolute;
   width: 100%;
   height: 23em;
@@ -45,9 +46,9 @@
 }
 
 .card__side--front {
-  background-image: linear-gradient(to right bottom, var(--color5), var(--color4));
+  /*background-image: linear-gradient(to right bottom, var(--color5), var(--color4));*/
   background-size: cover;
-  background-position: center;
+  background-position: top;
 }
 
 .card__side--back {
@@ -66,28 +67,28 @@
 }
 
 /* ------------ FRONT --------------- */
-.comedian_info {
+.card__side--front__info {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   padding: 0.5em 1em 0.9em 1em;
-  background-color: var(--color5);
+}
+
+.card__side--front__footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5em 1em 0.9em 1em;
+  background-image: linear-gradient(to right bottom, var(--color4), var(--color3));
   background-position: 0;
   transform: translateZ(-1px);
   border-radius: 0 0 0.25em 0.25em;
 }
 
-.rating {
-  font-size: 1.5rem;
-  color: white;
-}
-
-.name {
-  font-size: 1.5rem;
+.card__side--front__name {
+  /*font-size: 1.5rem;*/
+  font-size: 1.5em;
   font-weight: bold;
-}
-
-.rating {
-
 }
