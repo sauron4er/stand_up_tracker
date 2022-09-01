@@ -46,6 +46,14 @@
   padding: 1em;
 }
 
+.expand {
+  float: right;
+}
+
+.expand__input {
+  display: none;
+}
+
 .card__side--front {
   background-size: cover;
   background-position: top;

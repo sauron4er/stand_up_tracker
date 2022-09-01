@@ -12,12 +12,12 @@ function Expand(props) {
   }
 
   return (
-    <>
-      <input className='expand' id='expand' type='radio' name='expand' />
-      <label className='star star-5' htmlFor={`star-5-${props.id}`}>
+    <div className='expand'>
+      <input className='expand__input' id={`expand_input-${props.id}`} type='radio' name='star'/>
+      <label htmlFor={`expand_input-${props.id}`}>
         <i className='bx bx-expand-alt' onClick={expand} />
       </label>
-    </>
+    </div>
   );
 }
 
