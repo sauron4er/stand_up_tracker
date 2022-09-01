@@ -1,7 +1,10 @@
 .ratings {
   display: flex;
   justify-content: space-between;
-  background: gray;
+}
+
+.global_rating {
+  pointer-events: none;
 }
 
 .global_rating .bxs-star {
@@ -11,20 +14,30 @@
 .user_rating{
   display: flex;
   flex-direction: row-reverse;
-  height: 2rem;
+  height: 1.5rem;
+  padding: 0;
 }
 
 input.star{
   display: none;
 }
 
-.bx-star {
+.bx-star, .bx-check-circle {
   float: right;
-  padding: 5px;
+  padding: 0 3px;
   font-size: 1.5rem;
   color: #444;
   transition: all .2s;
   margin-bottom: 1em;
+}
+
+.bx-check-circle {
+  transform: translateY(0.2rem);
+  font-size: 1.2rem;
+}
+
+input.star:checked ~ label > .bx-check-circle {
+  color: lightgray;
 }
 
 input.star:checked ~ label > .bx-star {
@@ -37,10 +50,22 @@ input.star-5:checked ~ label > .bx-star {
   text-shadow: 1px 1px 20px #FFFFFF;
 }
 
+input.star-3:checked ~ label > .bx-star {
+  color: #fac93d;
+}
+
+input.star-2:checked ~ label > .bx-star {
+  color: #fc8e58;
+}
+
 input.star-1:checked ~ label > .bx-star {
   color: #F62;
 }
 
-label > .bx-star:hover{
+.bx-star:hover {
   transform: rotate(-15deg) scale(1.3);
+}
+
+.bx-check-circle:hover {
+  transform: translateY(0.2rem) scale(1.2);
 }

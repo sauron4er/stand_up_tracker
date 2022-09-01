@@ -3,52 +3,52 @@
   "assets": {
     "sidebar.js": {
       "name": "sidebar.js",
-      "path": "C:\\Users\\Stas\\Documents\\Code\\stand_up_tracker\\static\\bundles\\sidebar.js",
+      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\sidebar.js",
       "publicPath": "/static/sidebar.js"
     },
     "home.js": {
       "name": "home.js",
-      "path": "C:\\Users\\Stas\\Documents\\Code\\stand_up_tracker\\static\\bundles\\home.js",
+      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\home.js",
       "publicPath": "/static/home.js"
     },
     "my_specials.js": {
       "name": "my_specials.js",
-      "path": "C:\\Users\\Stas\\Documents\\Code\\stand_up_tracker\\static\\bundles\\my_specials.js",
+      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\my_specials.js",
       "publicPath": "/static/my_specials.js"
     },
     "calendar.js": {
       "name": "calendar.js",
-      "path": "C:\\Users\\Stas\\Documents\\Code\\stand_up_tracker\\static\\bundles\\calendar.js",
+      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\calendar.js",
       "publicPath": "/static/calendar.js"
     },
     "library.js": {
       "name": "library.js",
-      "path": "C:\\Users\\Stas\\Documents\\Code\\stand_up_tracker\\static\\bundles\\library.js",
+      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\library.js",
       "publicPath": "/static/library.js"
     },
     "search.js": {
       "name": "search.js",
-      "path": "C:\\Users\\Stas\\Documents\\Code\\stand_up_tracker\\static\\bundles\\search.js",
+      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\search.js",
       "publicPath": "/static/search.js"
     },
     "comedians.js": {
       "name": "comedians.js",
-      "path": "C:\\Users\\Stas\\Documents\\Code\\stand_up_tracker\\static\\bundles\\comedians.js",
+      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\comedians.js",
       "publicPath": "/static/comedians.js"
     },
     "specials.js": {
       "name": "specials.js",
-      "path": "C:\\Users\\Stas\\Documents\\Code\\stand_up_tracker\\static\\bundles\\specials.js",
+      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\specials.js",
       "publicPath": "/static/specials.js"
     },
     "profile.js": {
       "name": "profile.js",
-      "path": "C:\\Users\\Stas\\Documents\\Code\\stand_up_tracker\\static\\bundles\\profile.js",
+      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\profile.js",
       "publicPath": "/static/profile.js"
     },
     "corporate_pages.js": {
       "name": "corporate_pages.js",
-      "path": "C:\\Users\\Stas\\Documents\\Code\\stand_up_tracker\\static\\bundles\\corporate_pages.js",
+      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\corporate_pages.js",
       "publicPath": "/static/corporate_pages.js"
     }
   },
@@ -84,5 +84,7 @@
       "corporate_pages.js"
     ]
   },
-  "publicPath": "/static/"
+  "publicPath": "/static/",
+  "error": "ModuleBuildError",
+  "message": "Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: D:\\Робота\\Code\\stand_up_tracker\\templates\\components\\ratings\\expand.jsx: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>? (17:8)\n\n  15 |       // <div className='user_rating'>\n  16 |         <input className='star star-5' id={`star-5-${props.id}`} type='radio' name='star' onChange={(e) => editUserRating(5)} />\n> 17 |         <label className='star star-5' htmlFor={`star-5-${props.id}`}>\n     |         ^\n  18 |           <i className='bx bx-star' />\n  19 |         </label>\n  20 |\n    at instantiate (D:\\Робота\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:72:32)\n    at constructor (D:\\Робота\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:366:12)\n    at JSXParserMixin.raise (D:\\Робота\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:3453:19)\n    at JSXParserMixin.jsxParseElementAt (D:\\Робота\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:8143:18)\n    at JSXParserMixin.jsxParseElement (D:\\Робота\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:8155:17)\n    at JSXParserMixin.parseExprAtom (D:\\Робота\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:8169:19)\n    at JSXParserMixin.parseExprSubscripts (D:\\Робота\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:12785:23)\n    at JSXParserMixin.parseUpdate (D:\\Робота\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:12764:21)\n    at JSXParserMixin.parseMaybeUnary (D:\\Робота\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:12734:23)\n    at JSXParserMixin.parseMaybeUnaryOrPrivate (D:\\Робота\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:12525:61)"
 }
