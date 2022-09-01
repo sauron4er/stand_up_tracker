@@ -1,9 +1,17 @@
-.rating{
-  /*width: 270px;*/
+.ratings {
+  display: flex;
+  justify-content: space-between;
+  background: gray;
+}
+
+.global_rating .bxs-star {
+  transform: translateY(1px);
+}
+
+.user_rating{
   display: flex;
   flex-direction: row-reverse;
-  /*justify-content: flex-end;*/
-  /*margin-bottom: 20px;*/
+  height: 2rem;
 }
 
 input.star{

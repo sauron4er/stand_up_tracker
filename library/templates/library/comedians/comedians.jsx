@@ -41,7 +41,7 @@ function Comedians() {
           rating_global: '4.3',
           rating_user: '',
           died: '',
-          picture: 'Louis_CK.jpg',
+          picture: 'Louis_CK.webp',
           wiki_url: 'https://en.wikipedia.org/wiki/Louis_C.K.'
         },
         specials: []
