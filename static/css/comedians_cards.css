@@ -1,9 +1,3 @@
-/**, *::after, *::before {*/
-/*  padding: 0;*/
-/*  margin: 0;*/
-/*  box-sizing: border-box;*/
-/*}*/
-
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -58,6 +52,10 @@
   background-size: cover;
   background-position: top;
   isolation: isolate;
+}
+
+.card__side--front:hover {
+  background-position: 0 -10px;
 }
 
 .card__side--back {
