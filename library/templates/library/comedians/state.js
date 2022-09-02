@@ -11,7 +11,18 @@ const comediansState = store({
       died: '',
       picture: 'Jerry_Seinfeld.jpg',
       wiki_url: 'https://en.wikipedia.org/wiki/Jerry_Seinfeld',
-      specials: []
+      specials: [
+        {
+          name: '23 Hours to Kill',
+          rating_global: '3.5',
+          rating_user: '4'
+        },
+        {
+          name: 'Jerry Before Seinfeld',
+          rating_global: '4',
+          rating_user: '4'
+        }
+      ]
     },
     {
       id: 2,

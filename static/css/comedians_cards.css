@@ -55,7 +55,7 @@
 }
 
 .card__side--front:hover {
-  background-position: 0 -10px;
+  background-position-y: -10px;
 }
 
 .card__side--back {
@@ -105,4 +105,10 @@
   font-size: 1.5em;
   font-weight: bold;
   pointer-events: none;
+}
+
+/* ------------ BACK --------------- */
+.card__side--back__name {
+  font-weight: bold;
+  font-size: 1.2em;
 }
