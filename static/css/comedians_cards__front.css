@@ -1,0 +1,46 @@
+.card__side--front {
+  background-size: cover;
+  background-position: top;
+  isolation: isolate;
+}
+
+.card__side--front:hover {
+  background-position-y: -10px;
+}
+
+.c_card.clicked .card__side--front {
+  transform: rotateY(-180deg);
+}
+
+.card__side--front__info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5em 1em 0.9em 1em;
+}
+
+.card__side--front__footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.3em 1em 0.9em 1em;
+  background-image: linear-gradient(to right bottom, var(--color4), var(--color3));
+  background-position: 0;
+  transform: translateZ(-1px);
+  border-radius: 0 0 0.25em 0.25em;
+}
+
+.card__side--front__name {
+  /*font-size: 1.5rem;*/
+  font-size: 1.5em;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+/* ------------ BACK --------------- */
+.card__side--back__name {
+  font-weight: bold;
+  font-size: 1.2em;
+}

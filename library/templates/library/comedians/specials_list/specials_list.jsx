@@ -13,7 +13,7 @@ function SpecialsList(props) {
   }
 
   return (
-    <ul className='specials'>
+    <ul className='card__side--back__specials'>
       <For each='special' of={props.specials} index='special_idx'>
         <Special key={special_idx} {...special} />
       </For>

@@ -4,6 +4,7 @@ import useSetState from 'templates/hooks/useSetState';
 import comediansState from 'library/templates/library/comedians/state';
 import Expand from 'templates/components/ratings/expand';
 import SpecialsList from 'library/templates/library/comedians/specials_list';
+import 'static/css/comedians_cards__back.css'
 
 function ComedianBack(props) {
   const [state, setState] = useSetState({

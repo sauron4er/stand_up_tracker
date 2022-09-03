@@ -4,6 +4,7 @@ import useSetState from 'templates/hooks/useSetState';
 import comediansState from 'library/templates/library/comedians/state';
 import Rating from 'templates/components/ratings/rating';
 import Expand from 'templates/components/ratings/expand';
+import 'static/css/comedians_cards__front.css'
 
 function ComedianFront(props) {
   const [state, setState] = useSetState({

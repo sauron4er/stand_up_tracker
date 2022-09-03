@@ -16,7 +16,7 @@ function Special(props) {
   return (
     <li>
       <div className='special_card' onClick={onClick}>
-        <div className='special_card_name'>{props.name}</div>
+        <div className='special_card__name'>{props.name}</div>
       </div>
     </li>
   );
