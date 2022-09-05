@@ -4,7 +4,7 @@ import useSetState from 'templates/hooks/useSetState';
 import comediansState from 'library/templates/library/comedians/state';
 import Rating from 'templates/components/ratings/rating';
 import Expand from 'templates/components/ratings/expand';
-import 'static/css/comedians_cards__front.css'
+import 'static/css/library/comedians_cards__front.css'
 
 function ComedianFront(props) {
   const [state, setState] = useSetState({
@@ -28,7 +28,7 @@ function ComedianFront(props) {
           <div className='card__side--front__footer'>
             <div className='card__side--front__name'>{state.comedian.name}</div>
             <Rating
-              id={state.comedian.id}
+              id={`comedian_${state.comedian.id}`}
               rating_global={state.comedian.rating_global}
               rating_user={state.comedian.rating_user}
               changeUserRating={changeUserRating}

@@ -1,10 +1,9 @@
 from django.urls import path, re_path
-from .views import library, comedians, specials
+from .views import library, add_comedian
 
 app_name = 'library'
 
 urlpatterns = [
-    path('comedians', comedians, name='comedians'),
-    path('specials', specials, name='specials'),
+    path('add_comedian', add_comedian, name='add_comedian'),
     path('', library, name='library'),
 ]

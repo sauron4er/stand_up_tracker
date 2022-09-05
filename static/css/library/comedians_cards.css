@@ -54,7 +54,7 @@
   isolation: isolate;
 }
 
-.card__side--front:hover {
+.c_card:hover .card__side--front {
   background-position-y: -10px;
 }
 

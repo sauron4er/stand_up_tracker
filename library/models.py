@@ -1,6 +1,6 @@
 from django.db import models
 from django.db.models import URLField
-from profile.models import Account
+from profile.models import Account, Country
 
 
 class Comedian(models.Model):
@@ -10,6 +10,8 @@ class Comedian(models.Model):
     died = models.DateField(null=True)
     picture = models.ImageField(upload_to='comedians')
     wiki_url = URLField(max_length=200)
+    country = models.ForeignKey(Country, related_name='comedians', on_delete=models.RESTRICT)
+    added_by = models.ForeignKey(Account, related_name='added_comedians', on_delete=models.RESTRICT)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
@@ -28,11 +30,13 @@ class Streaming(models.Model):
 
 class Special(models.Model):
     name = models.CharField(max_length=30)
+    comedian = models.ForeignKey(Comedian, related_name='comedian', on_delete=models.RESTRICT, null=True)
     duration = models.DurationField(null=True)
     release_date = models.DateField(null=True)
     streaming = models.ForeignKey(Streaming, related_name='specials', on_delete=models.RESTRICT, null=True)
     poster = models.ImageField(upload_to='specials/%Y/%m', null=True)
     imdb_url = URLField(max_length=200, null=True)
+    added_by = models.ForeignKey(Account, related_name='added_specials', on_delete=models.RESTRICT)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):

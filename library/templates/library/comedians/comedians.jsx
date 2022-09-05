@@ -3,7 +3,7 @@ import {store, view} from '@risingstack/react-easy-state';
 import useSetState from 'templates/hooks/useSetState';
 import comediansState from 'library/templates/library/comedians/state';
 import Comedian from 'library/templates/library/comedians/comedian';
-import 'static/css/comedians_cards.css';
+import 'static/css/library/comedians_cards.css';
 
 function Comedians() {
   const [state, setState] = useSetState({

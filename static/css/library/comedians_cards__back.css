@@ -19,19 +19,16 @@
   list-style-type: none;
 }
 
-.card__side--back__specials .special_card {
+.card__side--back .special_card {
   margin-bottom: .7em;
   padding: .5em;
-
   border-width: .13em;
   border-style: solid;
   border-image:
-    /*linear-gradient(to right, red, rgba(0, 0, 0, 0)) 100% 1;*/
-    linear-gradient(to right, rgba(0, 0, 0, 0), #fff, rgba(0, 0, 0, 0)) 100% 1;
-  /*border: 1px solid white;*/
+  linear-gradient(to right, rgba(0, 0, 0, 0), #fff, rgba(0, 0, 0, 0)) 100% 1;
 
 }
 
-.card__side--back__specials .special_card .special_card__name {
-
+.card__side--back .special_card__name {
+  pointer-events: none;
 }

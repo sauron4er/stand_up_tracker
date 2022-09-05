@@ -26,6 +26,11 @@
       "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\library.js",
       "publicPath": "/static/library.js"
     },
+    "add_comedian.js": {
+      "name": "add_comedian.js",
+      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\add_comedian.js",
+      "publicPath": "/static/add_comedian.js"
+    },
     "search.js": {
       "name": "search.js",
       "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\search.js",
@@ -68,6 +73,9 @@
     "library": [
       "library.js"
     ],
+    "add_comedian": [
+      "add_comedian.js"
+    ],
     "search": [
       "search.js"
     ],
@@ -84,5 +92,7 @@
       "corporate_pages.js"
     ]
   },
-  "publicPath": "/static/"
+  "publicPath": "/static/",
+  "error": "ModuleBuildError",
+  "message": "Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: E:\\Code\\stand_up_tracker\\library\\templates\\library\\add_comedian\\add_special.jsx: Unexpected token (36:77)\n\n  34 |           <input id='special_streaming' className='input' type='text' placeholder='Streaming' />\n  35 |         </div>\n> 36 |         <div className='picture'><UploadAndDisplayImage id={`special_${props.}`} /></div>\n     |                                                                              ^\n  37 |       </div>\n  38 |       {/*<hr/>*/}\n  39 |     </>\n    at instantiate (E:\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:72:32)\n    at constructor (E:\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:366:12)\n    at JSXParserMixin.raise (E:\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:3453:19)\n    at JSXParserMixin.unexpected (E:\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:3491:16)\n    at JSXParserMixin.parseIdentifierName (E:\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:14219:18)\n    at JSXParserMixin.parseIdentifier (E:\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:14199:23)\n    at JSXParserMixin.parseMember (E:\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:12864:28)\n    at JSXParserMixin.parseSubscript (E:\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:12838:21)\n    at JSXParserMixin.parseSubscripts (E:\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:12802:19)\n    at JSXParserMixin.parseExprSubscripts (E:\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:12791:17)"
 }

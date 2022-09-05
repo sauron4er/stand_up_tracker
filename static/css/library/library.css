@@ -1,14 +1,20 @@
-button#comedians, button#specials {
+.library_button {
   cursor: pointer;
-  /*padding: 10px 20px;*/
+  padding: .2em .4em;
   margin: 0 2px;
   background: var(--color4);
   color: #fff;
   border: 1px solid var(--color4);
   border-radius: 3px;
+  text-decoration: none;
 }
 
-button#comedians.active, button#specials.active {
+.library_button:hover {
+  color: #fff;
+  box-shadow: 1px 1px 10px #A2A2A2;
+}
+
+.library_button.active {
   background: #fffffff6;
   color: #000;
   border-top: 3px solid var(--color3);
@@ -23,4 +29,12 @@ button#comedians.active, button#specials.active {
   /*border-radius:3px;*/
   /*overflow:auto;*/
   /*padding:20px;*/
+}
+
+.buttons_container {
+  display:flex;
+}
+
+#add_comedian {
+  margin-left: auto;
 }

@@ -3,7 +3,7 @@ import {store, view} from '@risingstack/react-easy-state';
 import useSetState from 'templates/hooks/useSetState';
 import Comedians from './comedians';
 import Specials from './specials';
-import 'static/css/library.css';
+import 'static/css/library/library.css';
 
 function Library() {
   const [state, setState] = useSetState({
@@ -14,14 +14,25 @@ function Library() {
     setState({view: e.target.id});
   }
 
+  function addComedianClick() {
+
+  }
+
   return (
     <>
-      <button id='comedians' className={state.view === 'comedians' ? 'active' : ''} onClick={onRadioClick}>
+      <div className='buttons_container'>
+        <button id='comedians' className={`library_button ${state.view === 'comedians' ? 'active' : ''}`} onClick={onRadioClick}>
         Comedians
-      </button>
-      <button id='specials' className={state.view === 'specials' ? 'active' : ''} onClick={onRadioClick}>
-        Specials
-      </button>
+        </button>
+        <button id='specials' className={`library_button ${state.view === 'specials' ? 'active' : ''}`} onClick={onRadioClick}>
+          Specials
+        </button>
+
+        {/*<a href={`${window.location.origin}/library/add_comedian/`} id='add_comedian' className='library_button' onClick={addComedianClick}>*/}
+        <a href='add_comedian' id='add_comedian' className='library_button' onClick={addComedianClick}>
+          Add Comedian
+        </a>
+      </div>
 
       <div className='library-content'>
         <Choose>
