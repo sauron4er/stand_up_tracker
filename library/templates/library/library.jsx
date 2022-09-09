@@ -14,10 +14,6 @@ function Library() {
     setState({view: e.target.id});
   }
 
-  function addComedianClick() {
-
-  }
-
   return (
     <>
       <div className='buttons_container'>
@@ -29,7 +25,7 @@ function Library() {
         </button>
 
         {/*<a href={`${window.location.origin}/library/add_comedian/`} id='add_comedian' className='library_button' onClick={addComedianClick}>*/}
-        <a href='add_comedian' id='add_comedian' className='library_button' onClick={addComedianClick}>
+        <a href='edit_comedian' id='add_comedian' className='library_button'>
           Add Comedian
         </a>
       </div>

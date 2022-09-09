@@ -1,21 +1,26 @@
 import React, {useEffect} from 'react';
 import {store, view} from '@risingstack/react-easy-state';
-import useSetState from 'templates/hooks/useSetState';
+import editComedianState from './state';
 import UploadAndDisplayImage from 'templates/components/form/image_uploader';
 
-function AddSpecial(props) {
-
-  function delSpecial() {
-    props.delete(props.index);
+function EditSpecial(props) {
+  function editSpecial(field_name, value) {
+    let new_specials = [...editComedianState.specials];
+    new_specials[props.index][field_name] = value;
+    editComedianState.specials = new_specials;
   }
 
-  // function onChange(e, field) {
-  //   setState({[field]: e.target.value});
-  // }
+  function delSpecial() {
+    let new_specials = [...editComedianState.specials];
+    new_specials.splice(props.index, 1);
+    editComedianState.specials = new_specials;
+  }
 
-  // useEffect(() => {
-  //   props.edit(props.index, state)
-  // }, [state])
+  function onPictureChange(file) {
+    editComedianState.specials[props.index].picture = file;
+  }
+
+  console.log(editComedianState);
 
   // validation - name, unique name relative to comedian
 
@@ -31,8 +36,8 @@ function AddSpecial(props) {
             type='text'
             placeholder='Name'
             autoFocus
-            onChange={(e) => props.edit(props.index, 'name', e.target.value)}
-            value={props.name}
+            onChange={(e) => editSpecial('name', e.target.value)}
+            value={editComedianState.specials[props.index].name}
           />
           <div className='input_duration'>
             <span id='duration'>Duration:</span>
@@ -47,17 +52,19 @@ function AddSpecial(props) {
           <input id='special_streaming' className='input' type='text' placeholder='Streaming' />
         </div>
         <div className='picture'>
-          <UploadAndDisplayImage id={`special_${props.index}`} />
+          <UploadAndDisplayImage
+            alt={editComedianState.specials[props.index].name}
+            onChange={onPictureChange}
+            id={`special_${props.index}`}
+          />
         </div>
       </div>
     </>
   );
 }
 
-AddSpecial.defaultProps = {
-  index: 0,
-  edit: () => {},
-  delete: () => {}
+EditSpecial.defaultProps = {
+  index: 0
 };
 
-export default view(AddSpecial);
+export default view(EditSpecial);

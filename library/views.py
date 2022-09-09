@@ -17,4 +17,4 @@ def search(request):
 @login_required(login_url='login')
 def add_comedian(request):
     if request.method == 'GET':
-        return render(request, 'library/add_comedian/index.html')
+        return render(request, 'library/edit_comedian/index.html')
