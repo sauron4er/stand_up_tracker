@@ -6,6 +6,7 @@ const UploadAndDisplayImage = (props) => {
 
   function addImage(e) {
     setSelectedImage(e.target.files[0])
+    props.onChange(e.target.files[0])
   }
 
   function removeImage() {
@@ -15,7 +16,7 @@ const UploadAndDisplayImage = (props) => {
   return (
     <div className='image_uploader'>
       <If condition={selectedImage}>
-        <img alt='not fount' src={URL.createObjectURL(selectedImage)} />
+        <img alt={props.alt} src={URL.createObjectURL(selectedImage)} />
         <br />
       </If>
       <div className='upload_buttons_container'>
@@ -40,7 +41,8 @@ const UploadAndDisplayImage = (props) => {
 };
 
 UploadAndDisplayImage.defaultProps = {
-  id: 0
+  id: 0,
+  alt: ''
 };
 
 export default UploadAndDisplayImage;
