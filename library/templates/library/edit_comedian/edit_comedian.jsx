@@ -4,8 +4,8 @@ import editComedianState from './state';
 import UploadAndDisplayImage from 'templates/components/form/image_uploader';
 import EditSpecials from './edit_specials';
 import 'static/css/library/edit_comedian.css';
-import {axiosPostRequest} from '../../../../templates/components/axios_requests';
-import {notify} from '../../../../templates/components/react_toastify_settings';
+import {axiosPostRequest} from 'templates/components/axios_requests';
+import {notify} from 'templates/components/react_toastify_settings';
 
 function EditComedian() {
 
@@ -29,9 +29,13 @@ function EditComedian() {
 
   function postComedian() {
     let formData = new FormData();
-    formData.append('comedian', JSON.stringify(editComedianState.comedian));
+    formData.append('comedian', JSON.stringify(editComedianState));
+    formData.append('picture', editComedianState.picture);
+    editComedianState.specials.map((special, index) => {
+      formData.append(`${index}`, special.picture);
+    });
 
-    axiosPostRequest('add_comedian', formData)
+    axiosPostRequest('post_comedian', formData)
       .then((response) => {
         console.log(response);
       })
@@ -73,6 +77,7 @@ function EditComedian() {
           !editComedianState.picture ||
           !areSpecialsValid()
         }
+        onClick={postComedian}
       >
         Submit
       </button>

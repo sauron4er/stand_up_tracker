@@ -49,13 +49,16 @@
 }
 
 .card__side--front {
+  background-color: #100F0F;
   background-size: cover;
   background-position: top;
   isolation: isolate;
+  transition: all 0.6s ease;
 }
 
 .c_card:hover .card__side--front {
   background-position-y: -10px;
+  background-blend-mode: screen;
 }
 
 .card__side--back {
