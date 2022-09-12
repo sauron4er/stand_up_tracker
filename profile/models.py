@@ -21,8 +21,8 @@ class Language(models.Model):
 
 class Country(models.Model):
     name = models.CharField(max_length=25)
-    flag = models.ImageField(upload_to='flags')
-    main_language = models.ForeignKey(Language, related_name='countries', on_delete=models.RESTRICT)
+    flag = models.ImageField(upload_to='flags', null=True)
+    main_language = models.ForeignKey(Language, related_name='countries', on_delete=models.RESTRICT, null=True)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):

@@ -26,18 +26,41 @@ def handle_comedian(request):
 @login_required(login_url='login')
 def add_comedian(comedian, picture):
     a=1
+    # name
+    # country
+    # born
+    # ?died
+    # ?wiki
+    # picture
+    # added_by
     pass
 
 
 @login_required(login_url='login')
 def edit_comedian(comedian, picture):
     a = 1
+    # name
+    # country
+    # born
+    # ?died
+    # ?wiki
+    # picture
+    # added_by
     pass
 
 
 @login_required(login_url='login')
 def add_special(special, picture):
     a = 1
+    # name
+    # ?comedian
+    # ?duration
+    # ?release_date
+    # ?poster
+    # ?imdb
+    # ?streaming
+    # added_by
+
     pass
 
 

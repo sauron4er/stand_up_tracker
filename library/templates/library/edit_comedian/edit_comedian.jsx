@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {store, view} from '@risingstack/react-easy-state';
 import editComedianState from './state';
 import UploadAndDisplayImage from 'templates/components/form/image_uploader';
@@ -6,6 +6,7 @@ import EditSpecials from './edit_specials';
 import 'static/css/library/edit_comedian.css';
 import {axiosPostRequest} from 'templates/components/axios_requests';
 import {notify} from 'templates/components/react_toastify_settings';
+import {SelectorAsync, TextInput} from 'templates/components/form';
 
 function EditComedian() {
 
@@ -15,6 +16,11 @@ function EditComedian() {
 
   function onPictureChange(file) {
     editComedianState.picture = file;
+  }
+
+  function onCountryChange(e) {
+    editComedianState.country = e.id;
+    editComedianState.country_name = e.name;
   }
 
   function areSpecialsValid() {
@@ -50,22 +56,37 @@ function EditComedian() {
       <hr />
       <div className='comedian form'>
         <div className='fields'>
-          <label htmlFor='name'>Name</label>
-          <input id='name' className='input' type='text' placeholder='Name' autoFocus onChange={(e) => onChange(e, 'name')} />
-          <label htmlFor='country'>Country</label>
-          <input id='country' className='input' type='text' placeholder='Country' onChange={(e) => onChange(e, 'country')} />
-          <label htmlFor='born'>Born</label>
-          <input id='born' className='input' type='date' onChange={(e) => onChange(e, 'born')} />
-          <label htmlFor='died'>Died</label>
-          <input id='died' className='input' type='date' placeholder='Died' onChange={(e) => onChange(e, 'died')} />
-          <label htmlFor='wiki'>Wikipedia link</label>
-          <input id='wiki' className='input' type='text' placeholder='Wikipedia link' onChange={(e) => onChange(e, 'wiki')} />
-        </div>
+          <TextInput
+            text={editComedianState.name}
+            fieldName='Name'
+            onChange={(e) => onChange(e, 'name')}
+            maxLength={30}
+            autofocus={true}
+          />
+          <SelectorAsync
+            url='get_countries'
+            fieldName='Country'
+            onChange={onCountryChange}
+            value={{id: editComedianState.country, name: editComedianState.country_name}}
+          />
+
+          {/*<label htmlFor='born'>Born</label>*/}
+          {/*<input id='born' className='input' type='date' onChange={(e) => onChange(e, 'born')} />*/}
+          {/*<label htmlFor='died'>Died</label>*/}
+          {/*<input id='died' className='input' type='date' placeholder='Died' onChange={(e) => onChange(e, 'died')} />*/}
+
+          <TextInput
+            text={editComedianState.wiki}
+            fieldName='Wikipedia link'
+            onChange={(e) => onChange(e, 'wiki')}
+            maxLength={200}
+          />
+          </div>
         <div className='picture'>
           <UploadAndDisplayImage alt={editComedianState.name} onChange={onPictureChange} />
         </div>
       </div>
-      <hr />
+      <hr style={{zIndex: -1}} />
       <EditSpecials />
       <hr />
       <button

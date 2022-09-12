@@ -27,25 +27,25 @@
   width: 250px;
 }
 
-.form .fields input, .btn {
-  background: none;
-  border: 1px solid var(--color3);
-  padding: .5em .7em;
-  border-radius: 0.3em;
-}
+/*.form .fields input, .btn {*/
+/*  background: none;*/
+/*  border: 1px solid var(--color3);*/
+/*  padding: .5em .7em;*/
+/*  border-radius: 0.3em;*/
+/*}*/
 
-.form .fields input:focus {
-  outline: 0.1em solid var(--color3);
-}
+/*.form .fields input:focus {*/
+/*  outline: 0.1em solid var(--color3);*/
+/*}*/
 
-.form .fields input.input {
-  display: block;
-  width: 100%;
-}
+/*.form .fields input.input {*/
+/*  display: block;*/
+/*  width: 100%;*/
+/*}*/
 
-.form .fields input.input + label {
-  margin-top: 0.7em;
-}
+/*.form .fields input.input + label {*/
+/*  margin-top: 0.7em;*/
+/*}*/
 
 .input_duration {
   margin: 0.7em 0;

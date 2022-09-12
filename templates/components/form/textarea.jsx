@@ -1,29 +1,29 @@
 'use strict';
 import * as React from 'react';
-import 'css/forms/inputs.css';
+import 'css/forms/inputs.css'
 
-export function TextInput(props) {
+export function TextArea(props) {
+  const rows = props.text ? Math.round(props.text.length / 41) : 0;
+
   return (
-    <div className='css_input'>
-      <label className={props.className} htmlFor={props.fieldName}>
-        <If condition={props.fieldName !== '-'}>{props.fieldName}:</If>
-      </label>
-      <input
-        className='css_full_width'
-        type='text'
+    <label className={props.className + ' css_full_width'} htmlFor={props.fieldName}>
+      <If condition={props.fieldName !== '-'}>{props.fieldName}:</If>
+      <textarea
+        className='autoExpand css_full_width'
         name={props.fieldName}
         id={props.fieldName}
         value={props.text ? props.text : ''}
+        rows={rows > 0 ? rows : 1}
         onChange={props.onChange}
         maxLength={props.maxLength}
         disabled={props.disabled}
         autoFocus={props.autofocus}
       />
-    </div>
+    </label>
   );
 }
 
-TextInput.defaultProps = {
+TextArea.defaultProps = {
   text: '',
   fieldName: '-',
   onChange: () => {},

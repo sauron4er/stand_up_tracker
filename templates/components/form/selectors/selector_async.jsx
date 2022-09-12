@@ -3,7 +3,7 @@ import AsyncSelect from 'react-select/async';
 import useSetState from 'templates/hooks/useSetState';
 import {axiosPostRequest} from 'templates/components/axios_requests';
 import {notify} from 'templates/components/react_toastify_settings';
-import 'css/inputs.css'
+import 'css/forms/inputs.css'
 
 export function SelectorAsync(props) {
   const [state, setState] = useSetState({
@@ -31,7 +31,7 @@ export function SelectorAsync(props) {
   }
 
   return (
-    <div className={'css_full_width ' + props.className}>
+    <div className={`css_input ${props.className}`}>
       <If condition={props.fieldName}>
         <label className='mr-md-2' htmlFor={props.selectId}>
           {props.fieldName}:
@@ -40,6 +40,7 @@ export function SelectorAsync(props) {
       <AsyncSelect
         defaultOptions
         loadOptions={loadOptions}
+        id={props.selectId}
         onChange={props.onChange}
         isDisabled={props.disabled}
         value={props.value}
@@ -58,13 +59,10 @@ SelectorAsync.defaultProps = {
   className: '',
   url: '',
   fieldName: '',
-  valueField: 'name',
-  selectedName: '',
   onChange: () => {},
   disabled: false,
-  classes: {},
   value: {id: 0, name: ''},
   selectId: 'select',
-  color: false, // При true показує справа від селекта колір обраного об'єкта
+  color: false, // If true - shows color of selected object
   autofocus: false
 };

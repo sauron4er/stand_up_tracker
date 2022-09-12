@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import useSetState from 'templates/hooks/useSetState';
-import 'static/css/inputs.css';
+import 'static/css/forms/inputs.css';
 
 export function Password(props) {
   const [state, setState] = useSetState({

@@ -30,8 +30,8 @@ h5 {
   color: var(--select_option_text_color) !important;
 }
 
-/*.react-select-container, .react-select__control, .react-select__value-container, .react-select__indicators,*/
-/*.react-select__menu, .react-select__menu-list, .react-select__option {*/
-/*  color: var(--input_background) !important;*/
-/*  background: var(--select_option_text_color) !important;*/
-/*}*/
+.react-select-container, .react-select__control, .react-select__value-container, .react-select__indicators,
+.react-select__menu, .react-select__menu-list, .react-select__option {
+  color: var(--input_background) !important;
+  background: var(--select_option_text_color) !important;
+}
