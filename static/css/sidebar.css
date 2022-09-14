@@ -121,7 +121,6 @@
 
 .sidebar ul li .bx-search-alt-2 {
     /*position: absolute;*/
-    z-index: 99;
     color: #fff;
     font-size: 25px;
     transform: translateX(2px);

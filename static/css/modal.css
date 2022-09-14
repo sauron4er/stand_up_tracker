@@ -4,13 +4,7 @@
   max-height: 93%;
   max-width: 90%;
   overflow: auto;
-
   z-index: 1001;
-  /*background-color: white;*/
-  /*border: 1px solid #ccc;*/
-  /*box-shadow: 1px 1px 1px black;*/
-  /*padding: 16px;*/
-  /*box-sizing: border-box;*/
   transition: all 0.3s ease-out;
 }
 
@@ -37,32 +31,4 @@
   left: 0;
   top: 0;
   background-color: rgba(0, 0, 0, 0.5);
-}
-
-.css_client_popup {
-  z-index: 500;
-  background-color: white;
-  border: 1px solid #ccc;
-  box-shadow: 1px 1px 1px black;
-  padding: 16px;
-  box-sizing: border-box;
-  transition: all 0.3s ease-out;
-  /*min-width: 250px;*/
-  /*max-width: 350px;*/
-  width: 350px;
-  position: fixed;
-  overflow-y: scroll;
-}
-
-.css_modal_header {
-  color: var(--header_text)
-}
-
-.css_modal_client_name {
-  font-weight: bold;
-  color: var(--modal_client_text_color)
-}
-
-.css_modal_client_info {
-  color: var(--modal_client_text_color)
 }

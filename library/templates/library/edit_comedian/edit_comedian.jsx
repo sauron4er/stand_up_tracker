@@ -7,9 +7,9 @@ import 'static/css/library/edit_comedian.css';
 import {axiosPostRequest} from 'templates/components/axios_requests';
 import {notify} from 'templates/components/react_toastify_settings';
 import {SelectorAsync, TextInput} from 'templates/components/form';
+import {Button} from '../../../../templates/components/form/submit_button';
 
 function EditComedian() {
-
   function onChange(e, field) {
     editComedianState[field] = e.target.value;
   }
@@ -52,17 +52,11 @@ function EditComedian() {
 
   return (
     <>
-      <h4>Add or edit comedian</h4>
+      <h4>Add or edit comedian1</h4>
       <hr />
       <div className='comedian form'>
         <div className='fields'>
-          <TextInput
-            text={editComedianState.name}
-            fieldName='Name'
-            onChange={(e) => onChange(e, 'name')}
-            maxLength={30}
-            autofocus={true}
-          />
+          <TextInput text={editComedianState.name} fieldName='Name' onChange={(e) => onChange(e, 'name')} maxLength={30} autofocus={true} />
           <SelectorAsync
             url='get_countries'
             fieldName='Country'
@@ -75,22 +69,19 @@ function EditComedian() {
           {/*<label htmlFor='died'>Died</label>*/}
           {/*<input id='died' className='input' type='date' placeholder='Died' onChange={(e) => onChange(e, 'died')} />*/}
 
-          <TextInput
-            text={editComedianState.wiki}
-            fieldName='Wikipedia link'
-            onChange={(e) => onChange(e, 'wiki')}
-            maxLength={200}
-          />
-          </div>
+          <TextInput text={editComedianState.wiki} fieldName='Wikipedia link' onChange={(e) => onChange(e, 'wiki')} maxLength={200} />
+        </div>
         <div className='picture'>
           <UploadAndDisplayImage alt={editComedianState.name} onChange={onPictureChange} />
         </div>
       </div>
-      <hr style={{zIndex: -1}} />
+      <hr />
       <EditSpecials />
       <hr />
-      <button
-        className='btn'
+      <div>asd</div>
+      <Button
+        text='Submit'
+        onClick={postComedian}
         disabled={
           !editComedianState.name ||
           !editComedianState.country ||
@@ -98,10 +89,7 @@ function EditComedian() {
           !editComedianState.picture ||
           !areSpecialsValid()
         }
-        onClick={postComedian}
-      >
-        Submit
-      </button>
+      />
     </>
   );
 }

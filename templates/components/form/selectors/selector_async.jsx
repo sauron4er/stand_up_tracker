@@ -3,7 +3,7 @@ import AsyncSelect from 'react-select/async';
 import useSetState from 'templates/hooks/useSetState';
 import {axiosPostRequest} from 'templates/components/axios_requests';
 import {notify} from 'templates/components/react_toastify_settings';
-import 'css/forms/inputs.css'
+import 'static/css/forms/react-select.css'
 
 export function SelectorAsync(props) {
   const [state, setState] = useSetState({

@@ -11,7 +11,7 @@
 
 .library_button:hover {
   color: #fff;
-  box-shadow: 1px 1px 10px #A2A2A2;
+  box-shadow: 1px 1px 10px var(--color3);
 }
 
 .library_button.active {

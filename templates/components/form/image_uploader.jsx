@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import 'static/css/forms/image_uploader.css';
+import {Button} from './submit_button';
 
 const UploadAndDisplayImage = (props) => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -21,12 +22,13 @@ const UploadAndDisplayImage = (props) => {
       </If>
       <div className='upload_buttons_container'>
         <If condition={selectedImage}>
-          <button className='uploader_btn' onClick={removeImage}>
-            Remove
-          </button>
+          <Button
+            text='Remove'
+            onClick={removeImage}
+          />
         </If>
 
-        <label htmlFor={props.id} className='uploader_btn upload'>
+        <label htmlFor={props.id} className='css_button'>
           <i className='bx bx-image-add' /> Upload Picture
         </label>
         <input
