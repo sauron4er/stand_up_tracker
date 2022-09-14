@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {store, view} from '@risingstack/react-easy-state';
 import editComedianState from './state';
 import EditSpecial from './edit_special';
+import {Button} from '../../../../templates/components/form/submit_button';
 
 function EditSpecials() {
 
@@ -31,9 +32,10 @@ function EditSpecials() {
           <EditSpecial key={special_idx} index={special_idx} {...special} />
         </For>
       </If>
-      <button className='btn' onClick={newSpecial}>
-        Add special
-      </button>
+      <Button
+        text='Add special'
+        onClick={newSpecial}
+      />
     </>
   );
 }
