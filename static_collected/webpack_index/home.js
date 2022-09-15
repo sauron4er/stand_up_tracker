@@ -1,1 +1,0 @@
-import 'home/templates/home/index'

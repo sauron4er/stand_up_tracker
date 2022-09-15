@@ -1,13 +1,12 @@
 import React from 'react';
 import {store, view} from '@risingstack/react-easy-state';
 import editComedianState from './state';
-import UploadAndDisplayImage from 'templates/components/form/image_uploader';
+import UploadAndDisplayImage from 'components/form/image_uploader';
 import EditSpecials from './edit_specials';
-import 'static/css/library/edit_comedian.css';
-import {axiosPostRequest} from 'templates/components/axios_requests';
-import {notify} from 'templates/components/react_toastify_settings';
-import {SelectorAsync, TextInput} from 'templates/components/form';
-import {Button} from '../../../../templates/components/form/submit_button';
+import 'library/css/edit_comedian.css';
+import {axiosPostRequest} from 'components/axios_requests';
+import {notify} from 'components/react_toastify_settings';
+import {SelectorAsync, TextInput, DateInput, Button} from 'components/form';
 
 function EditComedian() {
   function onChange(e, field) {
@@ -33,7 +32,7 @@ function EditComedian() {
     }
   }
 
-  function postComedian() {
+  function postComedian(add_another=false) {
     let formData = new FormData();
     formData.append('comedian', JSON.stringify(editComedianState));
     formData.append('picture', editComedianState.picture);
@@ -43,16 +42,20 @@ function EditComedian() {
 
     axiosPostRequest('post_comedian', formData)
       .then((response) => {
+        editComedianState.id = response;
         console.log(response);
+        add_another ? location.reload() : null;
       })
       .catch((error) => notify(error));
   }
 
-  // validation - unique name, born date, at least one special
+  // TODO validation - unique name, born date, at least one special
+  // TODO фільтрація країни та стрімінга
+  // TODO save and add another
 
   return (
     <>
-      <h4>Add or edit comedian1</h4>
+      <h2>Add or edit comedian</h2>
       <hr />
       <div className='comedian form'>
         <div className='fields'>
@@ -63,25 +66,33 @@ function EditComedian() {
             onChange={onCountryChange}
             value={{id: editComedianState.country, name: editComedianState.country_name}}
           />
-
-          {/*<label htmlFor='born'>Born</label>*/}
-          {/*<input id='born' className='input' type='date' onChange={(e) => onChange(e, 'born')} />*/}
-          {/*<label htmlFor='died'>Died</label>*/}
-          {/*<input id='died' className='input' type='date' placeholder='Died' onChange={(e) => onChange(e, 'died')} />*/}
-
+          <DateInput date={editComedianState.born} fieldName='Born' onChange={(e) => onChange(e, 'born')} />
+          <DateInput date={editComedianState.died} fieldName='Died' onChange={(e) => onChange(e, 'died')} />
           <TextInput text={editComedianState.wiki} fieldName='Wikipedia link' onChange={(e) => onChange(e, 'wiki')} maxLength={200} />
         </div>
         <div className='picture'>
           <UploadAndDisplayImage alt={editComedianState.name} onChange={onPictureChange} />
         </div>
       </div>
+      <br />
       <hr />
       <EditSpecials />
       <hr />
       <div>asd</div>
       <Button
-        text='Submit'
+        text='Save'
         onClick={postComedian}
+        disabled={
+          !editComedianState.name ||
+          !editComedianState.country ||
+          !editComedianState.born ||
+          !editComedianState.picture ||
+          !areSpecialsValid()
+        }
+      />
+      <Button
+        text='Save and add another'
+        onClick={e => postComedian(true)}
         disabled={
           !editComedianState.name ||
           !editComedianState.country ||

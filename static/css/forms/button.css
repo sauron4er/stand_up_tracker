@@ -14,10 +14,6 @@
   font-size: 15px;
 }
 
-.css_button:focus {
-  outline: thin dotted;
-}
-
 .css_button:focus:not([disabled]) {
   box-shadow: var(--color4) 0 2px 4px, var(--color5) 0 7px 13px -3px;
 }
@@ -25,6 +21,7 @@
 .css_button:hover:not([disabled]) {
   box-shadow: var(--color3) 0 2px 4px, var(--color4) 0 7px 13px -3px;
   transform: translateY(-2px);
+  cursor: pointer;
 }
 
 .css_button:active:not([disabled]) {
@@ -35,4 +32,8 @@
 .css_button:disabled {
   color: var(--color3);
   box-shadow: none;
+}
+
+.css_button + .css_button {
+  margin-left: 1em;
 }

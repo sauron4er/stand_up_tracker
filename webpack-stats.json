@@ -3,57 +3,57 @@
   "assets": {
     "sidebar.js": {
       "name": "sidebar.js",
-      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\sidebar.js",
+      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\sidebar.js",
       "publicPath": "/static/sidebar.js"
     },
     "home.js": {
       "name": "home.js",
-      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\home.js",
+      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\home.js",
       "publicPath": "/static/home.js"
     },
     "my_specials.js": {
       "name": "my_specials.js",
-      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\my_specials.js",
+      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\my_specials.js",
       "publicPath": "/static/my_specials.js"
     },
     "calendar.js": {
       "name": "calendar.js",
-      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\calendar.js",
+      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\calendar.js",
       "publicPath": "/static/calendar.js"
     },
     "library.js": {
       "name": "library.js",
-      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\library.js",
+      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\library.js",
       "publicPath": "/static/library.js"
     },
     "edit_comedian.js": {
       "name": "edit_comedian.js",
-      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\edit_comedian.js",
+      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\edit_comedian.js",
       "publicPath": "/static/edit_comedian.js"
     },
     "search.js": {
       "name": "search.js",
-      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\search.js",
+      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\search.js",
       "publicPath": "/static/search.js"
     },
     "comedians.js": {
       "name": "comedians.js",
-      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\comedians.js",
+      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\comedians.js",
       "publicPath": "/static/comedians.js"
     },
     "specials.js": {
       "name": "specials.js",
-      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\specials.js",
+      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\specials.js",
       "publicPath": "/static/specials.js"
     },
     "profile.js": {
       "name": "profile.js",
-      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\profile.js",
+      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\profile.js",
       "publicPath": "/static/profile.js"
     },
     "corporate_pages.js": {
       "name": "corporate_pages.js",
-      "path": "D:\\Робота\\Code\\stand_up_tracker\\static\\bundles\\corporate_pages.js",
+      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\corporate_pages.js",
       "publicPath": "/static/corporate_pages.js"
     }
   },
@@ -92,5 +92,7 @@
       "corporate_pages.js"
     ]
   },
-  "publicPath": "/static/"
+  "publicPath": "/static/",
+  "error": "ModuleBuildError",
+  "message": "Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: E:\\Code\\stand_up_tracker\\library\\templates\\library\\edit_comedian\\edit_comedian.jsx: Unexpected token, expected \":\" (46:39)\n\n  44 |       .then((response) => {\n  45 |         console.log(response);\n> 46 |         add_another ? location.reload(); : null;\n     |                                        ^\n  47 |       })\n  48 |       .catch((error) => notify(error));\n  49 |   }\n    at instantiate (E:\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:72:32)\n    at constructor (E:\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:367:12)\n    at JSXParserMixin.raise (E:\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:3678:19)\n    at JSXParserMixin.unexpected (E:\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:3716:16)\n    at JSXParserMixin.expect (E:\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:4129:28)\n    at JSXParserMixin.parseConditional (E:\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:12521:12)\n    at JSXParserMixin.parseMaybeConditional (E:\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:12513:17)\n    at JSXParserMixin.parseMaybeAssign (E:\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:12459:21)\n    at JSXParserMixin.parseExpressionBase (E:\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:12395:23)\n    at E:\\Code\\stand_up_tracker\\node_modules\\@babel\\parser\\lib\\index.js:12389:39"
 }

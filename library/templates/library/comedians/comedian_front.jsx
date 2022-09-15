@@ -1,10 +1,10 @@
 import React from 'react';
 import {store, view} from '@risingstack/react-easy-state';
-import useSetState from 'templates/hooks/useSetState';
+import useSetState from 'components/hooks/useSetState';
 import comediansState from 'library/templates/library/comedians/state';
-import Rating from 'templates/components/ratings/rating';
-import Expand from 'templates/components/ratings/expand';
-import 'static/css/library/comedians_cards__front.css'
+import Rating from 'components/ratings/rating';
+import Expand from 'components/ratings/expand';
+import 'library/css/comedians_cards__front.css'
 
 function ComedianFront(props) {
   const [state, setState] = useSetState({

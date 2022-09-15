@@ -9,7 +9,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = secret_key
 
-ALLOWED_HOSTS = ['*'] if DEBUG else ['site_address.com.ua', 'localhost']
+ALLOWED_HOSTS = ['*'] if DEBUG else ['site_address.com.ua', 'localhost', '127.0.0.2']
 
 ADMINS = [('Stas', 'sauron4er@gmail.com')]
 
@@ -117,6 +117,7 @@ USE_TZ = True
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
     os.path.join(BASE_DIR, 'static', 'bundles'),
+    os.path.join(BASE_DIR, 'library', 'css'),
 ]
 
 

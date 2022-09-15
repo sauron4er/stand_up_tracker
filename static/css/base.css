@@ -7,12 +7,29 @@ html {
   padding: 0;
   overflow: hidden;
 }
+
 body {
   margin: 0;
 }
 
 img {
   max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  margin: 0;
+}
+
+hr {
+  clear: both;
+  color: var(--color3);
+  background-color: var(--color3);
+  height: 1px;
+  border: none;
+  margin: 1em 0;
+  padding: 0;
+  line-height: 1px;
 }
 
 body {
@@ -24,6 +41,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #D9D9D9;
+  height: 100vh;
 }
 
 .main {
@@ -32,16 +50,11 @@ body {
   background: var(--color5);
   box-shadow: 3px 2px 10px var(--color3);
   padding: min(5vw, 2vh);
-  /*padding: 20px;*/
   flex-grow: 1;
+  overflow: auto;
+  scrollbar-color: var(--color4) transparent; /* For Firefox */
+  scrollbar-width: thin; /* For Firefox */
 }
-
-/*@media (max-width: 620px) {*/
-/*  .main {*/
-/*    padding: 10px;*/
-/*  }*/
-/*}*/
-
 
 .css_full_width {
   width: 100%;
@@ -61,10 +74,6 @@ body {
   z-index: 1;
 }
 
-.navbar-toggler-icon {
-  color: green !important;
-}
-
 .css_base_nav {
   background: var(--nav);
   box-shadow: 0 6px 6px -2px rgba(0,0,0,.2);
@@ -79,26 +88,14 @@ body {
   font-weight: bold;
 }
 
-.css_input_valid {
-  box-shadow: 2px 1px 1px var(--input_valid);
+::-webkit-scrollbar {
+  width: 5px;
 }
 
-.css_input_invalid {
-  box-shadow: 2px 1px 1px var(--input_invalid);
+::-webkit-scrollbar-thumb {
+  background: var(--color4);
 }
 
-th, td {
-    border: 1px solid var(--table_cell_border_color) !important;
-}
-
-th:last-of-type, td:last-of-type {
-  border-right: 0 !important;
-}
-
-th:first-of-type, td:first-of-type {
-  border-left: 0 !important;
-}
-
-.dropdown-menu {
-  background: var(--dropdown_menu_background);
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color3);
 }

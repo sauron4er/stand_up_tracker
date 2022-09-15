@@ -1,1 +1,0 @@
-import 'templates/components/sidebar'

@@ -1,7 +1,8 @@
 import React, {useEffect} from 'react';
 import {store, view} from '@risingstack/react-easy-state';
 import editComedianState from './state';
-import UploadAndDisplayImage from 'templates/components/form/image_uploader';
+import UploadAndDisplayImage from 'components/form/image_uploader';
+import {SelectorAsync, TextInput, DateInput, DurationInput} from 'components/form';
 
 function EditSpecial(props) {
   function editSpecial(field_name, value) {
@@ -20,7 +21,12 @@ function EditSpecial(props) {
     editComedianState.specials[props.index].picture = file;
   }
 
-  console.log(editComedianState);
+  function onStreamingChange(e) {
+    let new_specials = [...editComedianState.specials];
+    new_specials[props.index].streaming = e.id;
+    new_specials[props.index].streaming_name = e.name;
+    editComedianState.specials = new_specials;
+  }
 
   // validation - name, unique name relative to comedian
 
@@ -29,27 +35,38 @@ function EditSpecial(props) {
       <div className='special form'>
         <div className='fields'>
           <i className='bx bx-x' onClick={delSpecial}></i>
-          <label htmlFor='special_name'>Name</label>
-          <input
-            id='special_name'
-            className='input'
-            type='text'
-            placeholder='Name'
-            autoFocus
+
+          <TextInput
+            text={editComedianState.specials[props.index].name}
+            fieldName='Name'
             onChange={(e) => editSpecial('name', e.target.value)}
-            value={editComedianState.specials[props.index].name}
+            maxLength={30}
+            autofocus={true}
           />
-          <div className='input_duration'>
-            <span id='duration'>Duration:</span>
-            <input id='h' name='h' type='number' min='0' max='24' />
-            <label htmlFor='h'>h</label>
-            <input id='m' name='m' type='number' min='0' max='59' />
-            <label htmlFor='m'>m</label>
-          </div>
-          <label htmlFor='special_release'>Release date</label>
-          <input id='special_release' className='input' type='date' placeholder='Release date' />
-          <label htmlFor='special_streaming'>Streaming</label>
-          <input id='special_streaming' className='input' type='text' placeholder='Streaming' />
+
+          <DurationInput
+            hours={editComedianState.specials[props.index].hours}
+            minutes={editComedianState.specials[props.index].minutes}
+            fieldName='Duration'
+            onChange={(hours, minutes) => {
+              editSpecial('hours', hours);
+              editSpecial('minutes', minutes);
+            }}
+          />
+
+          <DateInput
+            date={editComedianState.specials[props.index].release_date}
+            fieldName='Release date'
+            onChange={(e) => editSpecial('special_release', e.target.value)}
+          />
+
+          <SelectorAsync
+            url='get_streamings'
+            fieldName='Streaming'
+            onChange={onStreamingChange}
+            value={{id: editComedianState.specials[props.index].streaming, name: editComedianState.specials[props.index].streaming_name}}
+            mainColor='var(--color6)'
+          />
         </div>
         <div className='picture'>
           <UploadAndDisplayImage

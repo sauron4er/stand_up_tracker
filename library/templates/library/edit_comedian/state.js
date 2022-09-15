@@ -9,7 +9,7 @@ const editComedianState = store({
   died: '',
   wiki: '',
   picture: '',
-  specials: []
+  specials: [],
 });
 
 export default editComedianState;

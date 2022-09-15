@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 import json
 from library.api.edit_comedian import handle_comedian
 
@@ -25,5 +25,6 @@ def edit_comedian(request):
 @login_required(login_url='login')
 def post_comedian(request):
     if request.method == 'POST':
-        comedian_id = handle_comedian(request)
-        return render(request, 'library/edit_comedian/index.html')
+        comedian_id = 1
+        # comedian_id = handle_comedian(request)
+        return HttpResponse(comedian_id)

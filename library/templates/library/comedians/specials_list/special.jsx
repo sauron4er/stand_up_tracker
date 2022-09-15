@@ -1,7 +1,7 @@
 import React from 'react';
 import {store, view} from '@risingstack/react-easy-state';
-import useSetState from 'templates/hooks/useSetState';
-import Rating from 'templates/components/ratings/rating';
+import useSetState from 'components/hooks/useSetState';
+import Rating from 'components/ratings/rating';
 
 function Special(props) {
   const [state, setState] = useSetState({});

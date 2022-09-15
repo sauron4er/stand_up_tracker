@@ -1,31 +1,50 @@
-.css_input {
+.input {
   width: 100%;
 }
 
-.css_input + .css_input {
-  margin-top: .7em;
+.input_grow_2_cols {
+  grid-column: span 2;
 }
 
-.css_input_valid {
+.input + .input {
+  margin-top: 1em;
+}
+
+input, textarea {
+  border: 1px solid var(--color3);
+  border-radius: 4px;
+  padding: .5em;
+  margin-top: 1px;
+  font-size: 1em;
+  background-color: transparent;
+}
+
+input:focus, textarea:focus {
+  outline: 1px solid var(--color3);
+  box-shadow: none;
+}
+
+.input_date {
+  width: auto;
+  display: flex;
+  gap: 0 0.5em;
+  align-items: center;
+}
+
+.input_duration {
+  margin: 0.7em 0;
+}
+
+.input_duration input {
+  width: 75px;
+  margin-left: 0.5em;
+  margin-right: 0.2em;
+}
+
+.input_valid {
   box-shadow: 2px 1px 1px green;
 }
 
-.css_input_invalid {
+.input_invalid {
   box-shadow: 2px 1px 1px red;
-}
-
-input[type="text"], input[type="password"], textarea {
-  border: 1px solid var(--color3);
-  border-radius: 4px;
-  padding: 5px;
-  background-color: var(--input_background);
-  color: var(--textarea_text);
-}
-
-label {
-  color: var(--input_label)
-}
-
-h5 {
-  color: var(--header_text)
 }

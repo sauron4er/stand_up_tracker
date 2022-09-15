@@ -1,1 +1,1 @@
-import 'templates/components/sidebar'
+import 'components/sidebar'

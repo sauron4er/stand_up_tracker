@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {store, view} from '@risingstack/react-easy-state';
 import editComedianState from './state';
 import EditSpecial from './edit_special';
-import {Button} from '../../../../templates/components/form/submit_button';
+import {Button} from 'components/form';
 
 function EditSpecials() {
 
@@ -11,7 +11,8 @@ function EditSpecials() {
     const new_special = {
       id: 0,
       name: '',
-      duration: '',
+      hours: '',
+      minutes: '',
       release_date: '',
       streaming: '',
       picture: '',
@@ -26,7 +27,7 @@ function EditSpecials() {
 
   return (
     <>
-      <h5>Specials:</h5>
+      <h3>Specials:</h3>
       <If condition={editComedianState.specials}>
         <For each='special' of={editComedianState.specials} index='special_idx'>
           <EditSpecial key={special_idx} index={special_idx} {...special} />

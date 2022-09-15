@@ -1,9 +1,9 @@
 import React from 'react';
 import {store, view} from '@risingstack/react-easy-state';
-import useSetState from 'templates/hooks/useSetState';
+import useSetState from 'components/hooks/useSetState';
 import Comedians from './comedians';
 import Specials from './specials';
-import 'static/css/library/library.css';
+import 'library/css/library.css';
 
 function Library() {
   const [state, setState] = useSetState({

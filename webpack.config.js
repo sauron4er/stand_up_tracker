@@ -63,6 +63,7 @@ module.exports = {
     modules: ['node_modules', path.resolve(__dirname, 'static'), path.resolve(__dirname, 'templates')],
     extensions: ['.js', '.jsx', '.json'],
     alias: {
+      components: path.resolve(__dirname, 'components'),
       static: path.resolve(__dirname, 'static'),
       templates: path.resolve(__dirname, 'templates'),
       home: path.resolve(__dirname, 'home'),

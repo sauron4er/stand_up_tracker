@@ -1,6 +1,6 @@
 import React from 'react';
 import {store, view} from '@risingstack/react-easy-state';
-import useSetState from 'templates/hooks/useSetState';
+import useSetState from 'components/hooks/useSetState';
 import Special from 'library/templates/library/comedians/specials_list/special';
 
 function SpecialsList(props) {

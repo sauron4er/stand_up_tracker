@@ -1,0 +1,43 @@
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  align-items: flex-start;
+}
+
+@media (max-width: 600px) {
+  .form {
+    flex-direction: column;
+  }
+}
+
+.special.form {
+  background: var(--color6);
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: .4em;
+}
+
+.form .fields {
+  flex-grow: 1;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0 1em;
+}
+
+.form .picture {
+  width: 500px;
+}
+
+.input + .btn {
+  margin-top: .7em;
+}
+
+.bx-x {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  font-size: 1.5em;
+}

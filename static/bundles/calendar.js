@@ -46,7 +46,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _risingstack_react_easy_state__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @risingstack/react-easy-state */ \"./node_modules/@risingstack/react-easy-state/dist/es.es6.js\");\n/* harmony import */ var templates_hooks_useSetState__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! templates/hooks/useSetState */ \"./templates/hooks/useSetState.jsx\");\n\n\n\n\nfunction Calendar() {\n  const [state, setState] = (0,templates_hooks_useSetState__WEBPACK_IMPORTED_MODULE_2__[\"default\"])({});\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, \"Calendar\");\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_risingstack_react_easy_state__WEBPACK_IMPORTED_MODULE_1__.view)(Calendar));\n\n//# sourceURL=webpack://stand_up_tracker/./calendar/templates/calendar/calendar.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _risingstack_react_easy_state__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @risingstack/react-easy-state */ \"./node_modules/@risingstack/react-easy-state/dist/es.es6.js\");\n/* harmony import */ var components_hooks_useSetState__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/hooks/useSetState */ \"./components/hooks/useSetState.jsx\");\n\n\n\n\nfunction Calendar() {\n  const [state, setState] = (0,components_hooks_useSetState__WEBPACK_IMPORTED_MODULE_2__[\"default\"])({});\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, \"Calendar\");\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_risingstack_react_easy_state__WEBPACK_IMPORTED_MODULE_1__.view)(Calendar));\n\n//# sourceURL=webpack://stand_up_tracker/./calendar/templates/calendar/calendar.jsx?");
 
 /***/ }),
 
@@ -60,6 +60,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 
 /***/ }),
 
+/***/ "./components/hooks/useSetState.jsx":
+/*!******************************************!*\
+  !*** ./components/hooks/useSetState.jsx ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n\nfunction useSetState(props_state) {\n  const [state, setState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({ ...props_state\n  });\n\n  function setMultipleState(newState) {\n    setState(prevState => ({ ...prevState,\n      ...newState\n    }));\n  }\n\n  return [state, setMultipleState];\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (useSetState);\n\n//# sourceURL=webpack://stand_up_tracker/./components/hooks/useSetState.jsx?");
+
+/***/ }),
+
 /***/ "./static/webpack_index/calendar.js":
 /*!******************************************!*\
   !*** ./static/webpack_index/calendar.js ***!
@@ -67,16 +77,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var calendar_templates_calendar_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! calendar/templates/calendar/index */ \"./calendar/templates/calendar/index.jsx\");\n\n\n//# sourceURL=webpack://stand_up_tracker/./static/webpack_index/calendar.js?");
-
-/***/ }),
-
-/***/ "./templates/hooks/useSetState.jsx":
-/*!*****************************************!*\
-  !*** ./templates/hooks/useSetState.jsx ***!
-  \*****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n\nfunction useSetState(props_state) {\n  const [state, setState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({ ...props_state\n  });\n\n  function setMultipleState(newState) {\n    setState(prevState => ({ ...prevState,\n      ...newState\n    }));\n  }\n\n  return [state, setMultipleState];\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (useSetState);\n\n//# sourceURL=webpack://stand_up_tracker/./templates/hooks/useSetState.jsx?");
 
 /***/ }),
 
