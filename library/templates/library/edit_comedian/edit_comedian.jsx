@@ -57,7 +57,7 @@ function EditComedian() {
     <>
       <h2>Add or edit comedian</h2>
       <hr />
-      <div className='comedian form'>
+      <form className='comedian form'>
         <div className='fields'>
           <TextInput text={editComedianState.name} fieldName='Name' onChange={(e) => onChange(e, 'name')} maxLength={30} autofocus={true} />
           <SelectorAsync
@@ -70,10 +70,8 @@ function EditComedian() {
           <DateInput date={editComedianState.died} fieldName='Died' onChange={(e) => onChange(e, 'died')} />
           <TextInput text={editComedianState.wiki} fieldName='Wikipedia link' onChange={(e) => onChange(e, 'wiki')} maxLength={200} />
         </div>
-        <div className='picture'>
-          <UploadAndDisplayImage alt={editComedianState.name} onChange={onPictureChange} />
-        </div>
-      </div>
+        <UploadAndDisplayImage alt={editComedianState.name} onChange={onPictureChange} />
+      </form>
       <br />
       <hr />
       <EditSpecials />

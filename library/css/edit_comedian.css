@@ -26,10 +26,6 @@
   gap: 0 1em;
 }
 
-.form .picture {
-  width: 500px;
-}
-
 .input + .btn {
   margin-top: .7em;
 }
