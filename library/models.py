@@ -21,7 +21,6 @@ class Comedian(models.Model):
 class Streaming(models.Model):
     name = models.CharField(max_length=30)
     web_address = URLField(max_length=200)
-    rating = models.DecimalField(max_digits=2, decimal_places=1)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):

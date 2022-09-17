@@ -1,18 +1,14 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
+from datetime import datetime
 import json
-import re
+from library.models import Comedian
 
 
-@login_required(login_url='login')
 def handle_comedian(request):
     comedian = json.loads(request.POST['comedian'])
     specials = comedian['specials']
 
-    if comedian['id'] == 0:
-        add_comedian(comedian, request.FILES['picture'])
-    else:
-        edit_comedian(comedian, request.FILES['picture'])
+    comedian_instance = add_or_edit_comedian(comedian, request.FILES['picture'])
 
     for index, special in enumerate(specials):
         if special['status'] == 'new':
@@ -23,25 +19,29 @@ def handle_comedian(request):
     return -1
 
 
-@login_required(login_url='login')
-def add_comedian(comedian, picture):
-    a=1
+def add_or_edit_comedian(comedian, picture):
+    try:
+        comedian_instance = Comedian.objects.get(pk=comedian['id'])
+    except Comedian.DoesNotExist:
+        comedian_instance = Comedian()
+
+    comedian_instance.name = comedian['name']
+
+    born = datetime.strptime(comedian['born'], '%Y-%m-%d')
+    comedian_instance.born = comedian['born']
+
+    # comedian.phone = request.POST['phone'] if request.POST['phone'] != '' else None
+    # comedian.address = request.POST['address'] if request.POST['address'] != '' else None
+    # comedian.note = request.POST['note'] if request.POST['note'] != '' else None
+    # comedian.added_by_id = request.user.id
+
+    comedian_instance.save()
+
+    return comedian_instance
+
     # name
     # country
-    # born
-    # ?died
-    # ?wiki
-    # picture
-    # added_by
-    pass
-
-
-@login_required(login_url='login')
-def edit_comedian(comedian, picture):
-    a = 1
-    # name
-    # country
-    # born
+    # ?born
     # ?died
     # ?wiki
     # picture

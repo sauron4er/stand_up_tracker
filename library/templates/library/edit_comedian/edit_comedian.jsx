@@ -78,7 +78,6 @@ function EditComedian() {
       <hr />
       <EditSpecials />
       <hr />
-      <div>asd</div>
       <Button
         text='Save'
         onClick={postComedian}
@@ -96,7 +95,6 @@ function EditComedian() {
         disabled={
           !editComedianState.name ||
           !editComedianState.country ||
-          !editComedianState.born ||
           !editComedianState.picture ||
           !areSpecialsValid()
         }
