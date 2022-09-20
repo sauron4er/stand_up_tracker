@@ -2,16 +2,16 @@ import React from 'react';
 import {store, view} from '@risingstack/react-easy-state';
 import useSetState from 'components/hooks/useSetState';
 
-function Calendar() {
+function MyCalendar() {
   const [state, setState] = useSetState({
 
   });
 
   return (
     <>
-     Calendar
+     My Calendar
     </>
   );
 }
 
-export default view(Calendar);
+export default view(MyCalendar);

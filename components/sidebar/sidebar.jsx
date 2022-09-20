@@ -41,7 +41,7 @@ function SideBar() {
           <span className='tooltip'>My Specials</span>
         </li>
         <li>
-          <a href={`${window.location.origin}/calendar/`} className={state.pathname === 'calendar' ? 'active' : null}>
+          <a href={`${window.location.origin}/my_calendar/`} className={state.pathname === 'my_calendar' ? 'active' : null}>
             <i className='bx bxs-calendar' />
             <span className='links_name'>Calendar</span>
           </a>

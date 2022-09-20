@@ -1,15 +1,15 @@
 import React from 'react';
 import {createRoot} from 'react-dom/client';
-import Calendar from './calendar';
+import MyCalendar from './my_calendar';
 
-function CalendarApp() {
+function MyCalendarApp() {
   const div = document.getElementById('bundle');
 
   return (
     <React.StrictMode>
       <Choose>
         <When condition={div.dataset.name === 'calendar'}>
-          <Calendar />
+          <MyCalendar />
         </When>
       </Choose>
     </React.StrictMode>
@@ -18,4 +18,4 @@ function CalendarApp() {
 
 const container = document.getElementById('bundle');
 const root = createRoot(container);
-root.render(<CalendarApp />);
+root.render(<MyCalendarApp />);

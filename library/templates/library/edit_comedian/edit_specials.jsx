@@ -15,7 +15,7 @@ function EditSpecials() {
       minutes: '',
       release_date: '',
       streaming: '',
-      picture: '',
+      poster: '',
       status: 'new',
       valid_filled: false
     };

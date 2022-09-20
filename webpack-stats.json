@@ -16,10 +16,10 @@
       "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\my_specials.js",
       "publicPath": "/static/my_specials.js"
     },
-    "calendar.js": {
-      "name": "calendar.js",
-      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\calendar.js",
-      "publicPath": "/static/calendar.js"
+    "my_calendar.js": {
+      "name": "my_calendar.js",
+      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\my_calendar.js",
+      "publicPath": "/static/my_calendar.js"
     },
     "library.js": {
       "name": "library.js",
@@ -67,8 +67,8 @@
     "my_specials": [
       "my_specials.js"
     ],
-    "calendar": [
-      "calendar.js"
+    "my_calendar": [
+      "my_calendar.js"
     ],
     "library": [
       "library.js"

@@ -40,26 +40,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./calendar/templates/calendar/calendar.jsx":
-/*!**************************************************!*\
-  !*** ./calendar/templates/calendar/calendar.jsx ***!
-  \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _risingstack_react_easy_state__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @risingstack/react-easy-state */ \"./node_modules/@risingstack/react-easy-state/dist/es.es6.js\");\n/* harmony import */ var components_hooks_useSetState__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/hooks/useSetState */ \"./components/hooks/useSetState.jsx\");\n\n\n\n\nfunction Calendar() {\n  const [state, setState] = (0,components_hooks_useSetState__WEBPACK_IMPORTED_MODULE_2__[\"default\"])({});\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, \"Calendar\");\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_risingstack_react_easy_state__WEBPACK_IMPORTED_MODULE_1__.view)(Calendar));\n\n//# sourceURL=webpack://stand_up_tracker/./calendar/templates/calendar/calendar.jsx?");
-
-/***/ }),
-
-/***/ "./calendar/templates/calendar/index.jsx":
-/*!***********************************************!*\
-  !*** ./calendar/templates/calendar/index.jsx ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ \"./node_modules/react-dom/client.js\");\n/* harmony import */ var _calendar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./calendar */ \"./calendar/templates/calendar/calendar.jsx\");\n\n\n\n\nfunction CalendarApp() {\n  const div = document.getElementById('bundle');\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().StrictMode), null, div.dataset.name === 'calendar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_calendar__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null) : null);\n}\n\nconst container = document.getElementById('bundle');\nconst root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);\nroot.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(CalendarApp, null));\n\n//# sourceURL=webpack://stand_up_tracker/./calendar/templates/calendar/index.jsx?");
-
-/***/ }),
-
 /***/ "./components/hooks/useSetState.jsx":
 /*!******************************************!*\
   !*** ./components/hooks/useSetState.jsx ***!
@@ -70,13 +50,33 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./static/webpack_index/calendar.js":
-/*!******************************************!*\
-  !*** ./static/webpack_index/calendar.js ***!
-  \******************************************/
+/***/ "./my_calendar/templates/my_calendar/index.jsx":
+/*!*****************************************************!*\
+  !*** ./my_calendar/templates/my_calendar/index.jsx ***!
+  \*****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var calendar_templates_calendar_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! calendar/templates/calendar/index */ \"./calendar/templates/calendar/index.jsx\");\n\n\n//# sourceURL=webpack://stand_up_tracker/./static/webpack_index/calendar.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ \"./node_modules/react-dom/client.js\");\n/* harmony import */ var _my_calendar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./my_calendar */ \"./my_calendar/templates/my_calendar/my_calendar.jsx\");\n\n\n\n\nfunction MyCalendarApp() {\n  const div = document.getElementById('bundle');\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().StrictMode), null, div.dataset.name === 'calendar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_my_calendar__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null) : null);\n}\n\nconst container = document.getElementById('bundle');\nconst root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);\nroot.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(MyCalendarApp, null));\n\n//# sourceURL=webpack://stand_up_tracker/./my_calendar/templates/my_calendar/index.jsx?");
+
+/***/ }),
+
+/***/ "./my_calendar/templates/my_calendar/my_calendar.jsx":
+/*!***********************************************************!*\
+  !*** ./my_calendar/templates/my_calendar/my_calendar.jsx ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _risingstack_react_easy_state__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @risingstack/react-easy-state */ \"./node_modules/@risingstack/react-easy-state/dist/es.es6.js\");\n/* harmony import */ var components_hooks_useSetState__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/hooks/useSetState */ \"./components/hooks/useSetState.jsx\");\n\n\n\n\nfunction MyCalendar() {\n  const [state, setState] = (0,components_hooks_useSetState__WEBPACK_IMPORTED_MODULE_2__[\"default\"])({});\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, \"My Calendar\");\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_risingstack_react_easy_state__WEBPACK_IMPORTED_MODULE_1__.view)(MyCalendar));\n\n//# sourceURL=webpack://stand_up_tracker/./my_calendar/templates/my_calendar/my_calendar.jsx?");
+
+/***/ }),
+
+/***/ "./static/webpack_index/my_calendar.js":
+/*!*********************************************!*\
+  !*** ./static/webpack_index/my_calendar.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var my_calendar_templates_my_calendar_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! my_calendar/templates/my_calendar/index */ \"./my_calendar/templates/my_calendar/index.jsx\");\n\n\n//# sourceURL=webpack://stand_up_tracker/./static/webpack_index/my_calendar.js?");
 
 /***/ }),
 
@@ -246,7 +246,7 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./static/webpack_index/calendar.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./static/webpack_index/my_calendar.js");
 /******/ 	
 /******/ })()
 ;

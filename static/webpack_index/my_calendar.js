@@ -1,0 +1,1 @@
+import 'my_calendar/templates/my_calendar/index'

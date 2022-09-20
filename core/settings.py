@@ -23,7 +23,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'my_specials',
-    'calendar',
+    'my_calendar',
     'library',
     'profile',
     'corporate_pages',

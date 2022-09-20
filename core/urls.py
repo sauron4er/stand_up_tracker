@@ -21,7 +21,7 @@ urlpatterns = [
 
     path(r'home/', include('home.urls', namespace='home')),
     path(r'my_specials/', include('my_specials.urls', namespace='my_specials')),
-    path(r'calendar/', include('calendar.urls', namespace='calendar')),
+    path(r'my_calendar/', include('my_calendar.urls', namespace='my_calendar')),
     path(r'library/', include('library.urls', namespace='library')),
     path(r'profile/', include('profile.urls', namespace='profile')),
 

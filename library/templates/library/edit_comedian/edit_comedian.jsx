@@ -37,7 +37,7 @@ function EditComedian() {
     formData.append('comedian', JSON.stringify(editComedianState));
     formData.append('picture', editComedianState.picture);
     editComedianState.specials.map((special, index) => {
-      formData.append(`${index}`, special.picture);
+      formData.append(`${index}`, special.poster);
     });
 
     axiosPostRequest('post_comedian', formData)

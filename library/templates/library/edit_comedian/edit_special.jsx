@@ -18,7 +18,7 @@ function EditSpecial(props) {
   }
 
   function onPictureChange(file) {
-    editComedianState.specials[props.index].picture = file;
+    editComedianState.specials[props.index].poster = file;
   }
 
   function onStreamingChange(e) {
@@ -57,7 +57,7 @@ function EditSpecial(props) {
           <DateInput
             date={editComedianState.specials[props.index].release_date}
             fieldName='Release date'
-            onChange={(e) => editSpecial('special_release', e.target.value)}
+            onChange={(e) => editSpecial('release_date', e.target.value)}
           />
 
           <SelectorAsync

@@ -33,7 +33,7 @@ class Account(models.Model):
     user = models.OneToOneField(User, on_delete=models.RESTRICT)
     phone = models.CharField(max_length=10, null=True)
     country = models.ForeignKey(Country, related_name='users', on_delete=models.RESTRICT)
-    theme = models.ForeignKey(Theme, related_name='users', on_delete=models.RESTRICT)
+    theme = models.ForeignKey(Theme, related_name='users', on_delete=models.RESTRICT, null=True)
     language = models.ForeignKey(Language, related_name='accounts', on_delete=models.RESTRICT)
     note = models.TextField(max_length=1000, null=True)
     is_active = models.BooleanField(default=True)
