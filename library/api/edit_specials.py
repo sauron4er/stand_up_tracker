@@ -2,7 +2,7 @@ from django.utils.dateparse import parse_duration
 from datetime import datetime
 import json
 from core.api.try_except import try_except
-from library.models import Comedian
+from library.models import Comedian, Special
 
 
 @try_except
@@ -29,13 +29,11 @@ def add_or_edit_special(request, special, index, comedian_instance=None):
     if comedian_instance:
         special_instance.comedian_id = comedian_instance.id
     if special['release_date'] != '':
-        # TODO не працює у фронтенді
-        # TODO селект у фронтенді світить синім active чи focused option
         special_instance.release_date = datetime.strptime(special['release_date'], '%Y-%m-%d')
     if special['streaming'] != '':
         special_instance.streaming_id = special['streaming']
     if special['id'] == 0:
-        comedian_instance.added_by = request.user.account
+        special_instance.added_by = request.user.account
 
     special_instance.save()
     return special_instance.id
@@ -44,9 +42,9 @@ def add_or_edit_special(request, special, index, comedian_instance=None):
 @try_except
 def get_special_instance(pk):
     try:
-        special_instance = Comedian.objects.get(pk=pk)
-    except Comedian.DoesNotExist:
-        special_instance = Comedian()
+        special_instance = Special.objects.get(pk=pk)
+    except Special.DoesNotExist:
+        special_instance = Special()
     return special_instance
 
 

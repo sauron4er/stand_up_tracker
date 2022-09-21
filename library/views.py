@@ -3,7 +3,7 @@ from django.shortcuts import render, HttpResponse
 from django.db import transaction
 import json
 from core.api.try_except import try_except
-from library.api.getters import get_streaming_services
+from library.api.getters import get_streaming_services, get_comedians_list
 from library.api.edit_comedian import handle_comedian
 from library.api.edit_specials import handle_specials
 
@@ -39,3 +39,8 @@ def post_comedian(request):
 @login_required(login_url='login')
 def get_streamings(request):
     return HttpResponse(json.dumps(get_streaming_services(request.POST['filter'])))
+
+
+@login_required(login_url='login')
+def get_comedians(request, page):
+    return HttpResponse(json.dumps(get_comedians_list(request.POST['filter'], page)))

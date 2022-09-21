@@ -32,7 +32,7 @@ function EditComedian() {
     }
   }
 
-  function postComedian(add_another=false) {
+  function postComedian(add_another = false) {
     let formData = new FormData();
     formData.append('comedian', JSON.stringify(editComedianState));
     formData.append('picture', editComedianState.picture);
@@ -42,11 +42,21 @@ function EditComedian() {
 
     axiosPostRequest('post_comedian', formData)
       .then((response) => {
-        editComedianState.id = response;
-        console.log(response);
-        add_another ? location.reload() : null;
+        add_another ? clearState() : location.reload();
       })
       .catch((error) => notify(error));
+  }
+
+  function clearState() {
+    editComedianState.id = 0;
+    editComedianState.name = '';
+    editComedianState.country = 0;
+    editComedianState.country_name = '';
+    editComedianState.born = '';
+    editComedianState.died = '';
+    editComedianState.wiki = '';
+    editComedianState.picture = '';
+    editComedianState.specials = [];
   }
 
   // TODO validation - unique name, born date, at least one special
@@ -89,13 +99,8 @@ function EditComedian() {
       />
       <Button
         text='Save and add another'
-        onClick={e => postComedian(true)}
-        disabled={
-          !editComedianState.name ||
-          !editComedianState.country ||
-          !editComedianState.picture ||
-          !areSpecialsValid()
-        }
+        onClick={(e) => postComedian(true)}
+        disabled={!editComedianState.name || !editComedianState.country || !editComedianState.picture || !areSpecialsValid()}
       />
     </>
   );

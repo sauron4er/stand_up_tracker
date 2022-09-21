@@ -56,7 +56,7 @@ export function SelectorAsync(props) {
           colors: {
             ...theme.colors,
             neutral0: props.mainColor,
-            primary25: 'var(--color6)',
+            primary25: 'var(--color4)',
             primary: 'var(--color4)',
           },
         })}

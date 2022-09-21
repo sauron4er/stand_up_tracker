@@ -34,7 +34,7 @@ class Account(models.Model):
     phone = models.CharField(max_length=10, null=True)
     country = models.ForeignKey(Country, related_name='users', on_delete=models.RESTRICT)
     theme = models.ForeignKey(Theme, related_name='users', on_delete=models.RESTRICT, null=True)
-    language = models.ForeignKey(Language, related_name='accounts', on_delete=models.RESTRICT)
+    language = models.ForeignKey(Language, related_name='accounts', on_delete=models.RESTRICT, null=True)
     note = models.TextField(max_length=1000, null=True)
     is_active = models.BooleanField(default=True)
 

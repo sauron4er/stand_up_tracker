@@ -1,14 +1,32 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {store, view} from '@risingstack/react-easy-state';
 import useSetState from 'components/hooks/useSetState';
 import comediansState from 'library/templates/library/comedians/state';
 import Comedian from 'library/templates/library/comedians/comedian';
 import 'library/css/comedians_cards.css';
+import {Loader} from 'components/form';
+import {axiosPostRequest} from 'components/axios_requests';
+import {notify} from 'components/react_toastify_settings';
 
 function Comedians() {
   const [state, setState] = useSetState({
-
+    page: 1,
+    filter: '',
+    comedians: []
   });
+
+  useEffect(() => {
+    let formData = new FormData();
+    formData.append('filter', state.filter);
+    axiosPostRequest(`get_comedians/${state.page}`, formData)
+      .then((response) => {
+        comediansState.comedians = response
+        setState({comedians: response})
+      })
+      .catch((error) => notify(error));
+  }, [state.page])
+
+  console.log(comediansState.comedians);
 
   return (
     <>
@@ -16,12 +34,19 @@ function Comedians() {
       <div>Search</div>
       {/*<div>Сортування за зірочками або по алфавіту</div>*/}
       {/*<div>Сховати повністю переглянутих</div>*/}
-
-      <ul className='cards'>
-        <For each='comedian' of={comediansState.comedians} index='idx'>
-          <Comedian key={idx} comedian_index={idx} />
-        </For>
-      </ul>
+      <Choose>
+        <When condition={state.comedians}>
+          <ul className='cards'>
+            <For each='comedian' of={state.comedians} index='idx'>
+              <div key={idx}>1</div>
+              {/*<Comedian key={idx} comedian_index={idx} />*/}
+            </For>
+          </ul>
+        </When>
+        <Otherwise>
+          <Loader />
+        </Otherwise>
+      </Choose>
     </>
   );
 }

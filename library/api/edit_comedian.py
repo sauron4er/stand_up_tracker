@@ -25,7 +25,7 @@ def add_or_edit_comedian(request, comedian):
     if comedian['born'] != '':
         comedian_instance.born = datetime.strptime(comedian['born'], '%Y-%m-%d')
     if comedian['died'] != '':
-        comedian_instance.born = datetime.strptime(comedian['died'], '%Y-%m-%d')
+        comedian_instance.died = datetime.strptime(comedian['died'], '%Y-%m-%d')
     if comedian['wiki'] != '':
         comedian_instance.wiki = comedian['wiki']
     if comedian['id'] == 0:
