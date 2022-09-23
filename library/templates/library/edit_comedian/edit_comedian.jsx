@@ -42,7 +42,7 @@ function EditComedian() {
 
     axiosPostRequest('post_comedian', formData)
       .then((response) => {
-        add_another ? clearState() : location.reload();
+         add_another ? clearState() : window.location.replace(`${window.location.origin}/library`);
       })
       .catch((error) => notify(error));
   }

@@ -29,7 +29,7 @@ class Streaming(models.Model):
 
 class Special(models.Model):
     name = models.CharField(max_length=30)
-    comedian = models.ForeignKey(Comedian, related_name='comedian', on_delete=models.RESTRICT, null=True)
+    comedian = models.ForeignKey(Comedian, related_name='specials', on_delete=models.RESTRICT, null=True)
     duration = models.DurationField(null=True)
     release_date = models.DateField(null=True)
     rating = models.DecimalField(max_digits=2, decimal_places=1, default=0)
@@ -45,7 +45,7 @@ class Special(models.Model):
 
 class Special_Cast(models.Model):
     special = models.ForeignKey(Special, related_name='cast', on_delete=models.RESTRICT)
-    comedian = models.ForeignKey(Comedian, related_name='specials', on_delete=models.RESTRICT)
+    comedian = models.ForeignKey(Comedian, related_name='cast_in_specials', on_delete=models.RESTRICT)
     is_active = models.BooleanField(default=True)
 
 

@@ -1,34 +1,62 @@
-from library.models import Streaming, Comedian
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.db.models import FilteredRelation, Q, Prefetch
+from core.api.try_except import try_except
+from library.models import Streaming, Comedian, Special
 
 
-def get_comedians_list(search_filter='', page=1):
-    comedians = Comedian.objects.filter(is_active=True)
+@try_except
+def get_comedians_list(search_filter='', page=0):
+    # TODO рейтинги
+
+    specials_queryset = Special.objects.filter(is_active=True)
+    comedians = Comedian.objects \
+        .prefetch_related(Prefetch('specials', queryset=specials_queryset, to_attr='active_specials'))\
+        .filter(is_active=True)
     if search_filter != '':
         comedians = comedians.filter(name__icontains=search_filter)
+
+    comedians, pages_count, page = paginate(comedians, page)
 
     comedians_list = [{
         'id': comedian.id,
         'name': comedian.name,
-        'born': '',
-        'died': '',
-        'rating_global': '',
+        # 'born': '',
+        # 'died': '',
+        'rating_global': str(comedian.rating),
         'rating_user': '',
-        'picture': '',
-        'wiki': '',
-        'specials': []
+        'picture': comedian.picture.name,
+        # 'wiki': '',
+        'specials': [{
+            'id': special.id,
+            'name': special.name,
+            'rating_global': str(special.rating),
+            'rating_user': '',
+            # 'poster': special.poster.name,
+            # 'imdb': special.imdb_url,
+            # 'duration': special.duration,
+            # 'release_date': special.release_date,
+        } for special in comedian.active_specials]
     } for comedian in comedians]
 
-
-    # born: 'April 29, 1954',
-    # rating_global: '4.7',
-    # rating_user: '5',
-    # died: '',
-    # picture: 'Jerry_Seinfeld.jpg',
-    # wiki_url: 'https://en.wikipedia.org/wiki/Jerry_Seinfeld',
-
-    return comedians_list
+    return {'comedians': comedians_list, 'pagesCount': pages_count, 'page': page}
 
 
+@try_except
+def paginate(comedians, page):
+    items_per_page = 20
+    paginator = Paginator(comedians, items_per_page)
+
+    try:
+        comedians_page = paginator.page(int(page) + 1)
+    except PageNotAnInteger:
+        comedians_page = paginator.page(1)
+    except EmptyPage:
+        comedians_page = paginator.page(1)
+
+    return comedians_page.object_list, paginator.num_pages, page
+
+
+@try_except
 def get_streaming_services(search_filter):
     streamings = Streaming.objects.filter(is_active=True)
     if search_filter != '':

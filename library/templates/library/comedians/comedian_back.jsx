@@ -15,9 +15,6 @@ function ComedianBack(props) {
     console.log('expand from back');
   }
 
-  console.log(props.comedian_index);
-  console.log(comediansState.comedians[props.comedian_index]);
-
   return (
     <div className='card__side card__side--back'>
       <div className='outline'>

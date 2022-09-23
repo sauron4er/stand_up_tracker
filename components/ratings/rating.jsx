@@ -8,16 +8,18 @@ function Rating(props) {
   });
 
   const changeUserRating = (rating_user) => {
-    props.changeUserRating(rating_user)
+    props.changeUserRating(rating_user);
     if (rating_user !== state.rating_user) {
       setState({rating_user});
     }
-  }
+  };
 
   return (
     <div className='ratings'>
       <div className='global_rating'>
-        <i className='bx bxs-star' /> {props?.rating_global}
+        <If condition={props?.rating_global && props?.rating_global !== '0.0'}>
+          <i className='bx bxs-star' /> {props?.rating_global}
+        </If>
       </div>
       <div className='user_rating'>
         <form>
@@ -26,7 +28,7 @@ function Rating(props) {
             id={`star-5-${props.id}`}
             type='radio'
             name='star'
-            onChange={e => changeUserRating('5')}
+            onChange={(e) => changeUserRating('5')}
             checked={state.rating_user === '5'}
           />
           <label className='star star-5' htmlFor={`star-5-${props.id}`}>
@@ -37,7 +39,7 @@ function Rating(props) {
             id={`star-4-${props.id}`}
             type='radio'
             name='star'
-            onChange={e => changeUserRating('4')}
+            onChange={(e) => changeUserRating('4')}
             checked={state.rating_user === '4'}
           />
           <label className='star star-4' htmlFor={`star-4-${props.id}`}>
@@ -48,7 +50,7 @@ function Rating(props) {
             id={`star-3-${props.id}`}
             type='radio'
             name='star'
-            onChange={e => changeUserRating('3')}
+            onChange={(e) => changeUserRating('3')}
             checked={state.rating_user === '3'}
           />
           <label className='star star-3' htmlFor={`star-3-${props.id}`}>
@@ -59,7 +61,7 @@ function Rating(props) {
             id={`star-2-${props.id}`}
             type='radio'
             name='star'
-            onChange={e => changeUserRating('2')}
+            onChange={(e) => changeUserRating('2')}
             checked={state.rating_user === '2'}
           />
           <label className='star star-2' htmlFor={`star-2-${props.id}`}>
@@ -70,7 +72,7 @@ function Rating(props) {
             id={`star-1-${props.id}`}
             type='radio'
             name='star'
-            onChange={e => changeUserRating('1')}
+            onChange={(e) => changeUserRating('1')}
             checked={state.rating_user === '1'}
           />
           <label className='star star-1' htmlFor={`star-1-${props.id}`}>
@@ -82,7 +84,7 @@ function Rating(props) {
               id={`star-0-${props.id}`}
               type='radio'
               name='star'
-              onChange={e => changeUserRating('0')}
+              onChange={(e) => changeUserRating('0')}
               checked={state.rating_user === '0'}
             />
             <label className='star star-0' htmlFor={`star-0-${props.id}`}>

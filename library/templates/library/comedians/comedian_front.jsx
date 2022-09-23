@@ -20,8 +20,10 @@ function ComedianFront(props) {
     // post to database;
   };
 
+  console.log(comediansState.comedians[props.comedian_index]);
+
   return (
-    <div className='card__side card__side--front' style={{backgroundImage: `url(/media/comedians/${state.comedian.picture})`}}>
+    <div className='card__side card__side--front' style={{backgroundImage: `url(/media/${state.comedian.picture})`}}>
       <div className='outline'>
         <Expand id={state.comedian.id} />
         <div className='card__side--front__info'>

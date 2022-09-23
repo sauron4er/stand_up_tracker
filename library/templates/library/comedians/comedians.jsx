@@ -10,6 +10,7 @@ import {notify} from 'components/react_toastify_settings';
 
 function Comedians() {
   const [state, setState] = useSetState({
+    pages_count: 0,
     page: 1,
     filter: '',
     comedians: []
@@ -20,8 +21,12 @@ function Comedians() {
     formData.append('filter', state.filter);
     axiosPostRequest(`get_comedians/${state.page}`, formData)
       .then((response) => {
-        comediansState.comedians = response
-        setState({comedians: response})
+        setState({
+          pages_count: response.pagesCount,
+          page: response.page
+        })
+        comediansState.comedians = response.comedians
+        setState({comedians: response.comedians})
       })
       .catch((error) => notify(error));
   }, [state.page])
@@ -38,8 +43,8 @@ function Comedians() {
         <When condition={state.comedians}>
           <ul className='cards'>
             <For each='comedian' of={state.comedians} index='idx'>
-              <div key={idx}>1</div>
-              {/*<Comedian key={idx} comedian_index={idx} />*/}
+              {/*<div key={idx}>1</div>*/}
+              <Comedian key={idx} comedian_index={idx} />
             </For>
           </ul>
         </When>
