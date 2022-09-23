@@ -20,7 +20,7 @@ function ComedianBack(props) {
       <div className='outline'>
         <Expand id={state.comedian.id} />
         <div className='card__side--back__name'>{state.comedian.name}</div>
-        <SpecialsList specials={comediansState.comedians[props.comedian_index].specials} />
+        <SpecialsList comedian_index={props.comedian_index} />
       </div>
     </div>
   );

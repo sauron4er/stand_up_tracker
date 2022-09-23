@@ -1,7 +1,8 @@
 from datetime import datetime
 import json
 from core.api.try_except import try_except
-from library.models import Comedian
+from library.api.getters import get_comedian_instance
+from library.models import User_Comedian_Rating, User_Special_Rating
 
 
 @try_except
@@ -13,14 +14,15 @@ def handle_comedian(request):
 
 @try_except
 def add_or_edit_comedian(request, comedian):
-    try:
-        comedian_instance = Comedian.objects.get(pk=comedian['id'])
-    except Comedian.DoesNotExist:
-        comedian_instance = Comedian()
+    comedian_instance = get_comedian_instance(comedian['id'])
 
     comedian_instance.name = comedian['name']
     comedian_instance.country_id = comedian['country']
     comedian_instance.picture = request.FILES['picture']
+
+    # TODO Переробити на використання get_or_create,
+    #  для цього треба спочатку опрацювати всі поля а потім викликати get_or_create
+    # TODO прибрати if __ != '':, для того, щоб могти видалити born, died чи wiki, якщо вони неправильно заповнені
 
     if comedian['born'] != '':
         comedian_instance.born = datetime.strptime(comedian['born'], '%Y-%m-%d')
@@ -33,3 +35,18 @@ def add_or_edit_comedian(request, comedian):
 
     comedian_instance.save()
     return comedian_instance
+
+
+@try_except
+def edit_comedian_rating(request):
+    rating, created = User_Comedian_Rating.objects\
+        .get_or_create(comedian_id=request.POST['comedian_id'],
+                       user=request.user.account,
+                       defaults={'rating': request.POST['rating']})
+    rating.rating = request.POST['rating']
+    rating.save()
+    # TODO edit_comedian_global_rating()
+
+
+
+

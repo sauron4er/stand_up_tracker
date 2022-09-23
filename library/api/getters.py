@@ -1,17 +1,21 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.db.models import FilteredRelation, Q, Prefetch
+from django.db.models import Prefetch
 from core.api.try_except import try_except
-from library.models import Streaming, Comedian, Special
+from library.models import Streaming, Comedian, Special, User_Comedian_Rating, User_Special_Rating
 
 
 @try_except
-def get_comedians_list(search_filter='', page=0):
-    # TODO рейтинги
-
+def get_comedians_list(user, search_filter='', page=0):
     specials_queryset = Special.objects.filter(is_active=True)
+    user_comedian_ratings_queryset = User_Comedian_Rating.objects.filter(user=user)
+    user_special_ratings_queryset = User_Special_Rating.objects.filter(user=user)
+
     comedians = Comedian.objects \
         .prefetch_related(Prefetch('specials', queryset=specials_queryset, to_attr='active_specials'))\
+        .prefetch_related(Prefetch('user_ratings', queryset=user_comedian_ratings_queryset, to_attr='user_comedian_rating'))\
+        .prefetch_related(Prefetch('specials__user_ratings', queryset=user_special_ratings_queryset, to_attr='user_special_rating'))\
         .filter(is_active=True)
+
     if search_filter != '':
         comedians = comedians.filter(name__icontains=search_filter)
 
@@ -23,14 +27,14 @@ def get_comedians_list(search_filter='', page=0):
         # 'born': '',
         # 'died': '',
         'rating_global': str(comedian.rating),
-        'rating_user': '',
+        'rating_user': str(comedian.user_comedian_rating[0].rating),
         'picture': comedian.picture.name,
         # 'wiki': '',
         'specials': [{
             'id': special.id,
             'name': special.name,
             'rating_global': str(special.rating),
-            'rating_user': '',
+            'rating_user': str(special.user_ratings.all().filter(user=user)[0].rating),  # TODO чи можна це покращити?
             # 'poster': special.poster.name,
             # 'imdb': special.imdb_url,
             # 'duration': special.duration,
@@ -57,6 +61,11 @@ def paginate(comedians, page):
 
 
 @try_except
+def get_user_comedian_rating(user, comedian):
+    a=1
+
+
+@try_except
 def get_streaming_services(search_filter):
     streamings = Streaming.objects.filter(is_active=True)
     if search_filter != '':
@@ -68,3 +77,19 @@ def get_streaming_services(search_filter):
     } for streaming in streamings]
 
     return streamings_list
+
+
+@try_except
+def get_comedian_instance(pk):
+    try:
+        return Comedian.objects.get(pk=pk)
+    except Comedian.DoesNotExist:
+        return Comedian()
+
+
+@try_except
+def get_special_instance(pk):
+    try:
+        return Special.objects.get(pk=pk)
+    except Special.DoesNotExist:
+        return Special()

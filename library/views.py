@@ -4,14 +4,19 @@ from django.db import transaction
 import json
 from core.api.try_except import try_except
 from library.api.getters import get_streaming_services, get_comedians_list
-from library.api.edit_comedian import handle_comedian
-from library.api.edit_specials import handle_specials
+from library.api.edit_comedian import handle_comedian, edit_comedian_rating
+from library.api.edit_specials import handle_specials, edit_special_rating
 
 
 @login_required(login_url='login')
 def library(request):
     if request.method == 'GET':
         return render(request, 'library/index.html')
+
+
+@login_required(login_url='login')
+def get_comedians(request, page):
+    return HttpResponse(json.dumps(get_comedians_list(request.user.account, request.POST['filter'], page)))
 
 
 @login_required(login_url='login')
@@ -36,11 +41,24 @@ def post_comedian(request):
         return HttpResponse(comedian_instance.id)
 
 
+@transaction.atomic
+@login_required(login_url='login')
+@try_except
+def rate_comedian(request):
+    if request.method == 'POST':
+        edit_comedian_rating(request)
+        return HttpResponse('ok')
+
+
+@transaction.atomic
+@login_required(login_url='login')
+@try_except
+def rate_special(request):
+    if request.method == 'POST':
+        edit_special_rating(request)
+        return HttpResponse('ok')
+
+
 @login_required(login_url='login')
 def get_streamings(request):
     return HttpResponse(json.dumps(get_streaming_services(request.POST['filter'])))
-
-
-@login_required(login_url='login')
-def get_comedians(request, page):
-    return HttpResponse(json.dumps(get_comedians_list(request.POST['filter'], page)))

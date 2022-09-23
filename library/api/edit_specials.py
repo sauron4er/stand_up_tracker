@@ -2,7 +2,8 @@ from django.utils.dateparse import parse_duration
 from datetime import datetime
 import json
 from core.api.try_except import try_except
-from library.models import Comedian, Special
+from library.api.getters import get_special_instance
+from library.models import User_Special_Rating
 
 
 @try_except
@@ -40,15 +41,6 @@ def add_or_edit_special(request, special, index, comedian_instance=None):
 
 
 @try_except
-def get_special_instance(pk):
-    try:
-        special_instance = Special.objects.get(pk=pk)
-    except Special.DoesNotExist:
-        special_instance = Special()
-    return special_instance
-
-
-@try_except
 def edit_duration(special_instance, hours, minutes):
     duration = get_duration(hours, minutes)
     if duration:
@@ -64,3 +56,14 @@ def get_duration(hours, minutes):
     if hours == minutes == 0:
         return None
     return parse_duration('0 ' + str(hours) + ':' + str(minutes) + ':0.000000')
+
+
+@try_except
+def edit_special_rating(request):
+    rating, created = User_Special_Rating.objects\
+        .get_or_create(special_id=request.POST['special_id'],
+                       user=request.user.account,
+                       defaults={'rating': request.POST['rating']})
+    rating.rating = request.POST['rating']
+    rating.save()
+    # TODO edit_special_global_rating()

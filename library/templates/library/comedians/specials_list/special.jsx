@@ -2,15 +2,29 @@ import React from 'react';
 import {store, view} from '@risingstack/react-easy-state';
 import useSetState from 'components/hooks/useSetState';
 import Rating from 'components/ratings/rating';
+import comediansState from 'library/templates/library/comedians/state';
+import {axiosPostRequest} from 'components/axios_requests';
+import {notify} from 'components/react_toastify_settings';
 
 function Special(props) {
-  const [state, setState] = useSetState({});
+  const [state, setState] = useSetState({
 
-  function changeUserRating() {
+  });
 
-  }
+  const changeSpecialRating = (rating_user) => {
+    console.log(comediansState.comedians[props.comedian_index]);
+    comediansState.comedians[props.comedian_index].specials[props.special_index].rating_user = rating_user;
 
+    let formData = new FormData();
+    formData.append('special_id', JSON.stringify(props.id));
+    formData.append('rating', rating_user);
 
+    axiosPostRequest('rate_special', formData)
+      .then((response) => {
+        console.log('good');
+      })
+      .catch((error) => notify(error));
+  };
 
   return (
     <li>
@@ -20,7 +34,7 @@ function Special(props) {
           id={`special_${props.id}`}
           rating_global={props.rating_global}
           rating_user={props.rating_user}
-          changeUserRating={changeUserRating}
+          changeUserRating={changeSpecialRating}
         />
       </div>
     </li>
@@ -28,6 +42,8 @@ function Special(props) {
 }
 
 Special.defaultProps = {
+  comedian_index: -1,
+  special_index: -1,
   id: 0,
   name: '',
   rating_global: '',

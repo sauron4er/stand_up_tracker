@@ -5,6 +5,9 @@ import comediansState from 'library/templates/library/comedians/state';
 import Rating from 'components/ratings/rating';
 import Expand from 'components/ratings/expand';
 import 'library/css/comedians_cards__front.css'
+import editComedianState from 'library/templates/library/edit_comedian/state';
+import {axiosPostRequest} from 'components/axios_requests';
+import {notify} from 'components/react_toastify_settings';
 
 function ComedianFront(props) {
   const [state, setState] = useSetState({
@@ -17,10 +20,17 @@ function ComedianFront(props) {
 
   const changeUserRating = (rating_user) => {
     comediansState.comedians[props.comedian_index].rating_user = rating_user;
-    // post to database;
-  };
 
-  console.log(comediansState.comedians[props.comedian_index]);
+    let formData = new FormData();
+    formData.append('comedian_id', JSON.stringify(comediansState.comedians[props.comedian_index].id));
+    formData.append('rating', rating_user);
+
+    axiosPostRequest('rate_comedian', formData)
+      .then((response) => {
+        console.log('good');
+      })
+      .catch((error) => notify(error));
+  };
 
   return (
     <div className='card__side card__side--front' style={{backgroundImage: `url(/media/${state.comedian.picture})`}}>

@@ -68,14 +68,14 @@ class Special_Comments(models.Model):
 class User_Comedian_Rating(models.Model):
     user = models.ForeignKey(Account, related_name='comedian_ratings', on_delete=models.RESTRICT)
     comedian = models.ForeignKey(Comedian, related_name='user_ratings', on_delete=models.RESTRICT)
-    rating = models.DecimalField(max_digits=2, decimal_places=1)
+    rating = models.PositiveSmallIntegerField()
     note = models.TextField(max_length=3000, null=True)
 
 
 class User_Special_Rating(models.Model):
     user = models.ForeignKey(Account, related_name='special_ratings', on_delete=models.RESTRICT)
     special = models.ForeignKey(Special, related_name='user_ratings', on_delete=models.RESTRICT)
-    rating = models.DecimalField(max_digits=2, decimal_places=1)
+    rating = models.PositiveSmallIntegerField()
     note = models.TextField(max_length=3000, null=True)
 
 

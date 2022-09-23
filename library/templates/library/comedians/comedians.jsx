@@ -31,8 +31,6 @@ function Comedians() {
       .catch((error) => notify(error));
   }, [state.page])
 
-  console.log(comediansState.comedians);
-
   return (
     <>
       <h4>Comedians database</h4>
