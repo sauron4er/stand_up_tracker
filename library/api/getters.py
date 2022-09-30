@@ -1,4 +1,5 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.shortcuts import get_object_or_404
 from django.db.models import Prefetch
 from core.api.try_except import try_except
 from library.models import Streaming, Comedian, Special, User_Comedian_Rating, User_Special_Rating
@@ -27,14 +28,14 @@ def get_comedians_list(user, search_filter='', page=0):
         # 'born': '',
         # 'died': '',
         'rating_global': str(comedian.rating),
-        'rating_user': str(comedian.user_comedian_rating[0].rating),
+        'rating_user': get_user_comedian_rating(user, comedian),
         'picture': comedian.picture.name,
         # 'wiki': '',
         'specials': [{
             'id': special.id,
             'name': special.name,
             'rating_global': str(special.rating),
-            'rating_user': str(special.user_ratings.all().filter(user=user)[0].rating),  # TODO чи можна це покращити?
+            'rating_user': get_user_streaming_rating(user, special)
             # 'poster': special.poster.name,
             # 'imdb': special.imdb_url,
             # 'duration': special.duration,
@@ -62,7 +63,22 @@ def paginate(comedians, page):
 
 @try_except
 def get_user_comedian_rating(user, comedian):
-    a=1
+    try:
+        rating_instance = User_Comedian_Rating.objects \
+            .get(comedian=comedian, user=user)
+        return str(rating_instance.rating)
+    except User_Comedian_Rating.DoesNotExist:
+        return ''
+
+
+@try_except
+def get_user_streaming_rating(user, special):
+    try:
+        rating_instance = User_Special_Rating.objects\
+            .get(special=special, user=user)
+        return str(rating_instance.rating)
+    except User_Special_Rating.DoesNotExist:
+        return ''
 
 
 @try_except
