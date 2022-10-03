@@ -2,9 +2,9 @@ import React from 'react';
 import {store, view} from '@risingstack/react-easy-state';
 import useSetState from 'components/hooks/useSetState';
 import comediansState from 'library/templates/library/comedians/state';
-import Expand from 'components/ratings/expand';
 import SpecialsList from 'library/templates/library/comedians/specials_list';
 import 'library/css/comedians_cards__back.css'
+import ExpandButton from './expand_button';
 
 function ComedianBack(props) {
   const [state, setState] = useSetState({
@@ -18,7 +18,7 @@ function ComedianBack(props) {
   return (
     <div className='card__side card__side--back'>
       <div className='outline'>
-        <Expand id={state.comedian.id} />
+        <ExpandButton id={state.comedian.id} />
         <div className='card__side--back__name'>{state.comedian.name}</div>
         <SpecialsList comedian_index={props.comedian_index} />
       </div>

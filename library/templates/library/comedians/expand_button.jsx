@@ -2,7 +2,7 @@ import React from 'react';
 import useSetState from 'components/hooks/useSetState';
 import 'static/css/rating.css';
 
-function Expand(props) {
+function ExpandButton(props) {
   const [state, setState] = useSetState({
     rating: 0
   });
@@ -21,8 +21,8 @@ function Expand(props) {
   );
 }
 
-Expand.defaultProps = {
+ExpandButton.defaultProps = {
   id: -1
 };
 
-export default Expand;
+export default ExpandButton;

@@ -7,8 +7,6 @@ function Library() {
 
   });
 
-  console.log(navigator.onLine);
-
   return (
     <>
       library

@@ -3,11 +3,11 @@ import {store, view} from '@risingstack/react-easy-state';
 import useSetState from 'components/hooks/useSetState';
 import comediansState from 'library/templates/library/comedians/state';
 import Rating from 'components/ratings/rating';
-import Expand from 'components/ratings/expand';
-import 'library/css/comedians_cards__front.css'
-import editComedianState from 'library/templates/library/edit_comedian/state';
+import 'library/css/comedians_cards__front.css';
 import {axiosPostRequest} from 'components/axios_requests';
 import {notify} from 'components/react_toastify_settings';
+import ExpandButton from './expand_button';
+import EditButton from './edit_button';
 
 function ComedianFront(props) {
   const [state, setState] = useSetState({
@@ -35,7 +35,10 @@ function ComedianFront(props) {
   return (
     <div className='card__side card__side--front' style={{backgroundImage: `url(/media/${state.comedian.picture})`}}>
       <div className='outline'>
-        <Expand id={state.comedian.id} />
+        <ExpandButton id={state.comedian.id} />
+        <If condition={window.is_staff}>
+          <EditButton id={state.comedian.id} />
+        </If>
         <div className='card__side--front__info'>
           <div className='card__side--front__footer'>
             <div className='card__side--front__name'>{state.comedian.name}</div>

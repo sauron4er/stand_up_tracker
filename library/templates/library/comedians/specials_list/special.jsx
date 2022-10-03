@@ -12,7 +12,6 @@ function Special(props) {
   });
 
   const changeSpecialRating = (rating_user) => {
-    console.log(comediansState.comedians[props.comedian_index]);
     comediansState.comedians[props.comedian_index].specials[props.special_index].rating_user = rating_user;
 
     let formData = new FormData();

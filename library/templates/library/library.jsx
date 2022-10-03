@@ -18,16 +18,17 @@ function Library() {
     <>
       <div className='buttons_container'>
         <button id='comedians' className={`library_button ${state.view === 'comedians' ? 'active' : ''}`} onClick={onRadioClick}>
-        Comedians
+          Comedians
         </button>
         <button id='specials' className={`library_button ${state.view === 'specials' ? 'active' : ''}`} onClick={onRadioClick}>
           Specials
         </button>
 
-        {/*<a href={`${window.location.origin}/library/add_comedian/`} id='add_comedian' className='library_button' onClick={addComedianClick}>*/}
-        <a href='edit_comedian' id='add_comedian' className='library_button'>
-          Add Comedian
-        </a>
+        <If condition={window.is_staff}>
+          <a href='edit_comedian/0' id='add_comedian' className='library_button'>
+            Add Comedian
+          </a>
+        </If>
       </div>
 
       <div className='library-content'>

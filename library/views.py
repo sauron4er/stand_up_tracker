@@ -26,9 +26,13 @@ def search(request):
 
 
 @login_required(login_url='login')
-def edit_comedian(request):
+def edit_comedian(request, comedian_id):
     if request.method == 'GET':
-        return render(request, 'library/edit_comedian/index.html')
+        comedian = {}
+        if comedian_id != '0':
+            comedian = {}
+        return render(request, 'library/edit_comedian/index.html',
+                      json.dumps({'comedian': comedian}))
 
 
 @transaction.atomic

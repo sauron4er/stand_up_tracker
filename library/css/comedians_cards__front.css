@@ -38,9 +38,3 @@
   font-weight: bold;
   pointer-events: none;
 }
-
-/* ------------ BACK --------------- */
-.card__side--back__name {
-  font-weight: bold;
-  font-size: 1.2em;
-}

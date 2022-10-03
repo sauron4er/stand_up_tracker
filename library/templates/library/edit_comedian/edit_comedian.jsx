@@ -42,7 +42,7 @@ function EditComedian() {
 
     axiosPostRequest('post_comedian', formData)
       .then((response) => {
-         add_another ? clearState() : window.location.replace(`${window.location.origin}/library`);
+        add_another ? clearState() : window.location.replace(`${window.location.origin}/library`);
       })
       .catch((error) => notify(error));
   }
@@ -65,7 +65,12 @@ function EditComedian() {
 
   return (
     <>
-      <h2>Add or edit comedian</h2>
+      <div className='header'>
+        <h2>Add or edit comedian</h2>
+        <a href='../../library' id='back_to_library'>
+          Back
+        </a>
+      </div>
       <hr />
       <form className='comedian form'>
         <div className='fields'>

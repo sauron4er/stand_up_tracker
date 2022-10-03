@@ -3,6 +3,10 @@
 {% block title %}Library{% endblock %}
 
 {% block content %}
+  <script>
+    window.is_staff = {{ request.user.is_staff|yesno:"true,false" }};
+  </script>
+
   <div data-name='library' id="bundle">
     <script type="text/javascript" src="{% static 'library.js' %}"></script>
   </div>
