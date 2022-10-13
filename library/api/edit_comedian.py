@@ -1,7 +1,7 @@
 from datetime import datetime
 import json
 from core.api.try_except import try_except
-from library.api.getters import get_comedian_instance
+from library.api.getters import get_or_create_comedian_instance
 from library.models import User_Comedian_Rating, User_Special_Rating
 
 
@@ -14,7 +14,7 @@ def handle_comedian(request):
 
 @try_except
 def add_or_edit_comedian(request, comedian):
-    comedian_instance = get_comedian_instance(comedian['id'])
+    comedian_instance = get_or_create_comedian_instance(comedian['id'])
 
     comedian_instance.name = comedian['name']
     comedian_instance.country_id = comedian['country']

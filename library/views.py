@@ -3,7 +3,7 @@ from django.shortcuts import render, HttpResponse
 from django.db import transaction
 import json
 from core.api.try_except import try_except
-from library.api.getters import get_streaming_services, get_comedians_list
+from library.api.getters import get_streaming_services, get_comedians_list, get_comedian_info
 from library.api.edit_comedian import handle_comedian, edit_comedian_rating
 from library.api.edit_specials import handle_specials, edit_special_rating
 
@@ -27,12 +27,9 @@ def search(request):
 
 @login_required(login_url='login')
 def edit_comedian(request, comedian_id):
-    if request.method == 'GET':
-        comedian = {}
-        if comedian_id != '0':
-            comedian = {}
-        return render(request, 'library/edit_comedian/index.html',
-                      json.dumps({'comedian': comedian}))
+    if request.method == 'GET' and comedian_id != '0':
+        comedian = get_comedian_info(comedian_id)
+        return render(request, 'library/edit_comedian/index.html', json.dumps({'comedian': comedian}))
 
 
 @transaction.atomic

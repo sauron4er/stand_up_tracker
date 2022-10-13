@@ -33,15 +33,16 @@ function SideBar() {
           <input className='search-input' type='text' placeholder='Search...' />
           <span className='tooltip'>Search</span>
         </li>
-        <li>
-          <a href={`${window.location.origin}/my_specials/`} className={state.pathname === 'my_specials' ? 'active' : null}>
+        <li className='soon'>
+          <a href='' className={state.pathname === 'my_specials' ? 'active' : null}>
+          {/*<a href={`${window.location.origin}/my_specials/`} className={state.pathname === 'my_specials' ? 'active' : null}>*/}
             <i className='bx bx-play-circle' />
             <span className='links_name'>My Specials</span>
           </a>
-          <span className='tooltip'>My Specials</span>
         </li>
-        <li>
-          <a href={`${window.location.origin}/my_calendar/`} className={state.pathname === 'my_calendar' ? 'active' : null}>
+        <li className='soon'>
+          <a href='' className={state.pathname === 'my_calendar' ? 'active' : null}>
+          {/*<a href={`${window.location.origin}/my_calendar/`} className={state.pathname === 'my_calendar' ? 'active' : null}>*/}
             <i className='bx bxs-calendar' />
             <span className='links_name'>Calendar</span>
           </a>
@@ -56,7 +57,7 @@ function SideBar() {
         </li>
         <li>
           <a href={`${window.location.origin}/profile/`} className={state.pathname === 'profile' ? 'active' : null}>
-            <i className='bx bx-glasses-alt'></i>
+            <i className='bx bx-glasses-alt' />
             <span className='links_name'>Profile</span>
           </a>
           <span className='tooltip'>Profile</span>

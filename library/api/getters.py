@@ -96,11 +96,26 @@ def get_streaming_services(search_filter):
 
 
 @try_except
-def get_comedian_instance(pk):
+def get_comedian_info(pk):
+    comedian_instance = get_comedian_instance_or_blank(pk)
+
+    return {}
+
+
+@try_except
+def get_or_create_comedian_instance(pk):
     try:
         return Comedian.objects.get(pk=pk)
     except Comedian.DoesNotExist:
         return Comedian()
+
+
+@try_except
+def get_comedian_instance_or_blank(pk):
+    try:
+        return Comedian.objects.get(pk=pk)
+    except Comedian.DoesNotExist:
+        return {}
 
 
 @try_except

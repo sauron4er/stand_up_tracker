@@ -154,7 +154,7 @@
     white-space: nowrap;
 }
 
-.sidebar ul li a:hover {
+.sidebar ul li:not(.soon) a:hover {
     color: var(--color2);
     background: var(--color4);
 }
@@ -172,6 +172,39 @@
     border-radius: 12px;
     line-height: 50px;
     text-align: center;
+}
+
+.sidebar ul li.soon {
+
+}
+
+.sidebar ul li.soon::before {
+    content: '';
+    font-weight: bold;
+    position: absolute;
+    right: 1em;
+    top: 25%;
+    height: 50%;
+    width: 50px;
+    border-radius: 5px;
+    background-color: var(--color4);
+    color: white;
+    padding: 0 5px;
+    z-index: 1;
+}
+
+.sidebar ul li.soon::after {
+    content: 'Soon';
+    font-weight: bold;
+    position: absolute;
+    right: 1em;
+    top: 1px;
+    height: 50%;
+    /*border-radius: 5px;*/
+    /*background-color: var(--color4);*/
+    color: white;
+    padding: 0 5px;
+    z-index: 1;
 }
 
 .sidebar .links_name {
