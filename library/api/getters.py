@@ -1,6 +1,7 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import get_object_or_404
 from django.db.models import Prefetch
+from datetime import date
 from core.api.try_except import try_except
 from library.models import Streaming, Comedian, Special, User_Comedian_Rating, User_Special_Rating
 
@@ -96,8 +97,31 @@ def get_streaming_services(search_filter):
 
 
 @try_except
-def get_comedian_info(pk):
+def get_comedian_for_editing(pk):
     comedian_instance = get_comedian_instance_or_blank(pk)
+
+    comedian = {
+        'id': comedian_instance.id,
+        'name': comedian_instance.name,
+        'born': date.strftime(comedian_instance.born, '%d.%m.%y'),
+        'died': date.strftime(comedian_instance.died, '%d.%m.%y') if comedian_instance.died else '',
+        'picture': comedian_instance.picture.name if comedian_instance.picture else '',
+        'wiki': comedian_instance.wiki_url or '',
+    }
+
+    # comedians_list = [{
+    #
+    #     'specials': [{
+    #         'id': special.id,
+    #         'name': special.name,
+    #         'rating_global': str(special.rating),
+    #         'rating_user': get_user_streaming_rating(user, special)
+    #         # 'poster': special.poster.name,
+    #         # 'imdb': special.imdb_url,
+    #         # 'duration': special.duration,
+    #         # 'release_date': special.release_date,
+    #     } for special in comedian_instance.active_specials]
+    # } for comedian_instance in comedians]
 
     return {}
 
