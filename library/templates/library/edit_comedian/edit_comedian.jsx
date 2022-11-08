@@ -74,7 +74,7 @@ function EditComedian() {
       <hr />
       <form className='comedian form'>
         <div className='fields'>
-          <TextInput text={editComedianState.name} fieldName='Name' onChange={(e) => onChange(e, 'name')} maxLength={30} autofocus={true} />
+          <TextInput text={editComedianState.name} fieldName='Name' onChange={(e) => onChange(e, 'name')} maxLength={50} autofocus={true} />
           <SelectorAsync
             url='get_countries'
             fieldName='Country'

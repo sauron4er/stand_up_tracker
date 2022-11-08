@@ -25,13 +25,6 @@ def search(request):
         return render(request, 'library/search/index.html')
 
 
-@login_required(login_url='login')
-def edit_comedian(request, comedian_id):
-    if request.method == 'GET' and comedian_id != '0':
-        comedian = get_comedian_for_editing(comedian_id)
-        return render(request, 'library/edit_comedian/index.html', json.dumps({'comedian': comedian}))
-
-
 @transaction.atomic
 @login_required(login_url='login')
 @try_except
@@ -40,6 +33,14 @@ def post_comedian(request):
         comedian_instance = handle_comedian(request)
         handle_specials(request, comedian_instance)
         return HttpResponse(comedian_instance.id)
+
+
+@login_required(login_url='login')
+def edit_comedian(request, comedian_id):
+    if request.method == 'GET':
+        comedian = get_comedian_for_editing(comedian_id) if comedian_id != '0' else {}
+        return render(request, 'library/edit_comedian/index.html',
+                      {'comedian': json.dumps(comedian)})
 
 
 @transaction.atomic

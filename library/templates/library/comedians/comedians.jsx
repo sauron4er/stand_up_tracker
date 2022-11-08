@@ -33,8 +33,8 @@ function Comedians() {
 
   return (
     <>
-      <h4>Comedians database</h4>
-      <div>Search</div>
+      {/*<h4>Comedians database</h4>*/}
+      {/*<div>Search</div>*/}
       {/*<div>Сортування за зірочками або по алфавіту</div>*/}
       {/*<div>Сховати повністю переглянутих</div>*/}
       <Choose>

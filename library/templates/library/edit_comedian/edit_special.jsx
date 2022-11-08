@@ -40,7 +40,7 @@ function EditSpecial(props) {
             text={editComedianState.specials[props.index].name}
             fieldName='Name'
             onChange={(e) => editSpecial('name', e.target.value)}
-            maxLength={30}
+            maxLength={50}
             autofocus={true}
           />
 
