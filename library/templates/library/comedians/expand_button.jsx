@@ -7,15 +7,18 @@ function ExpandButton(props) {
     rating: 0
   });
 
-  function expand() {
-    console.log(1);
+  function expand(e) {
+    e.stopPropagation()
   }
 
   return (
     <div className='expand'>
-      <input className='expand__input' id={`expand_input-${props.id}`} type='radio' name='star'/>
+      <input className='expand__input' id={`expand_input-${props.id}`} type='radio' name='star' />
       <label htmlFor={`expand_input-${props.id}`}>
-        <i className='bx bx-expand-alt' onClick={expand} />
+        <a href={`edit_comedian/${props.id}`} onClick={expand}>
+          <i className='bx bx-expand-alt' />
+        </a>
+
       </label>
     </div>
   );

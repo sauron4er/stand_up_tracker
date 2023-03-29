@@ -1,6 +1,31 @@
 import {store, view} from '@risingstack/react-easy-state';
 
 const comediansState = store({
+  expand_view: false,
+  expanded_comedian: {
+    id: 1,
+      name: 'Jerry Seinfeld',
+      born: 'April 29, 1954',
+      rating_global: '4.7',
+      rating_user: '5',
+      died: '',
+      picture: 'Jerry_Seinfeld.jpg',
+      wiki_url: 'https://en.wikipedia.org/wiki/Jerry_Seinfeld',
+      specials: [
+        {
+          id: 1,
+          name: '23 Hours to Kill',
+          rating_global: '3.5',
+          rating_user: '4'
+        },
+        {
+          id: 2,
+          name: 'Jerry Before Seinfeld',
+          rating_global: '4',
+          rating_user: '4'
+        }
+      ]
+  },
   comedians: [
     // {
     //   id: 1,

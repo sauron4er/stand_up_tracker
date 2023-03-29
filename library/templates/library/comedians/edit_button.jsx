@@ -7,14 +7,16 @@ function EditButton(props) {
     rating: 0
   });
 
-  function openEditPage() {}
+  function openEditPage(e) {
+    e.stopPropagation()
+  }
 
   return (
     <div className='edit'>
       <input className='edit__input' id={`edit_input-${props.id}`} type='radio' name='star' />
 
       <label htmlFor={`edit_input-${props.id}`}>
-        <a href={`edit_comedian/${props.id}`}>
+        <a href={`edit_comedian/${props.id}`} onClick={openEditPage}>
           <i className='bx bx-edit' />
         </a>
       </label>

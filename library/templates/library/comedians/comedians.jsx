@@ -37,10 +37,15 @@ function Comedians() {
       {/*<div>Search</div>*/}
       {/*<div>Сортування за зірочками або по алфавіту</div>*/}
       {/*<div>Сховати повністю переглянутих</div>*/}
+      {/*<div>Додати до зірочок "хрестик" для анулювання оцінки</div>*/}
+
       <Choose>
         <When condition={state.comedians}>
+          1
+          <If condition={comediansState.expand_view}><div>expanded</div></If>
           <ul className='cards'>
             <For each='comedian' of={state.comedians} index='idx'>
+
               {/*<div key={idx}>1</div>*/}
               <Comedian key={idx} comedian_index={idx} />
             </For>
