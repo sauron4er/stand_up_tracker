@@ -16,6 +16,7 @@ def get_comedians_list(user, search_filter='', page=0):
         .prefetch_related(Prefetch('specials', queryset=specials_queryset, to_attr='active_specials'))\
         .prefetch_related(Prefetch('user_ratings', queryset=user_comedian_ratings_queryset, to_attr='user_comedian_rating'))\
         .prefetch_related(Prefetch('specials__user_ratings', queryset=user_special_ratings_queryset, to_attr='user_special_rating'))\
+        .order_by('-rating')\
         .filter(is_active=True)
 
     if search_filter != '':
@@ -100,30 +101,37 @@ def get_streaming_services(search_filter):
 def get_comedian_for_editing(pk):
     comedian_instance = get_comedian_instance_or_blank(pk)
 
-    comedian = {
-        'id': comedian_instance.id,
-        'name': comedian_instance.name,
-        'born': date.strftime(comedian_instance.born, '%d.%m.%y'),
-        'died': date.strftime(comedian_instance.died, '%d.%m.%y') if comedian_instance.died else '',
-        'picture': comedian_instance.picture.name if comedian_instance.picture else '',
-        'wiki': comedian_instance.wiki_url or '',
-    }
+    if comedian_instance != {}:
+        comedian = {
+            'id': comedian_instance.id,
+            'name': comedian_instance.name,
+            'born': date.strftime(comedian_instance.born, '%Y-%m-%d'),
+            'died': date.strftime(comedian_instance.died, '%Y-%m-%d') if comedian_instance.died else '',
+            'country': comedian_instance.country.id,
+            'country_name': comedian_instance.country.name,
+            'picture': comedian_instance.picture.name if comedian_instance.picture else '',
+            'wiki': comedian_instance.wiki_url or '',
+            'specials': get_specials_for_comedian(comedian_instance.id)
+        }
+        return comedian
+    else:
+        return {}
+    # TODO return error
 
-    # comedians_list = [{
-    #
-    #     'specials': [{
-    #         'id': special.id,
-    #         'name': special.name,
-    #         'rating_global': str(special.rating),
-    #         'rating_user': get_user_streaming_rating(user, special)
-    #         # 'poster': special.poster.name,
-    #         # 'imdb': special.imdb_url,
-    #         # 'duration': special.duration,
-    #         # 'release_date': special.release_date,
-    #     } for special in comedian_instance.active_specials]
-    # } for comedian_instance in comedians]
 
-    return {}
+@try_except
+def get_specials_for_comedian(comedian_id):
+    specials = [{
+        'id': special.id,
+        'name': special.name,
+        'duration': special.duration.__str__(),
+        'release_date': date.strftime(special.release_date, '%d.%m.%y'),
+        'rating_global': str(special.rating),
+        'streaming': special.streaming.name,
+        'poster': special.poster.name,
+        'imdb': special.imdb_url,
+    } for special in Special.objects.filter(id=comedian_id).filter(is_active=True)]
+    return specials
 
 
 @try_except

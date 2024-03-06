@@ -1,5 +1,5 @@
-Django==4.1.1
+Django==4.2.9  # 4.2.9 is last version to support python 3.9. On hostiq server python is maximum 3.9
 # django-webpack-loader==1.6.0
-django-widget-tweaks==1.4.12
-mysqlclient==2.1.1
-Pillow==9.2.0  # for ImageField in models
+django-widget-tweaks==1.5.0
+mysqlclient==2.2.1
+Pillow==10.2.0  # for ImageField in models

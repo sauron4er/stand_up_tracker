@@ -41,7 +41,6 @@ function Comedians() {
 
       <Choose>
         <When condition={state.comedians}>
-          1
           <If condition={comediansState.expand_view}><div>expanded</div></If>
           <ul className='cards'>
             <For each='comedian' of={state.comedians} index='idx'>

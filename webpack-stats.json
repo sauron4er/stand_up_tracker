@@ -1,96 +1,98 @@
 {
   "status": "done",
   "assets": {
-    "sidebar.js": {
-      "name": "sidebar.js",
-      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\sidebar.js",
-      "publicPath": "/static/sidebar.js"
-    },
-    "home.js": {
-      "name": "home.js",
-      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\home.js",
-      "publicPath": "/static/home.js"
-    },
-    "my_specials.js": {
-      "name": "my_specials.js",
-      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\my_specials.js",
-      "publicPath": "/static/my_specials.js"
-    },
-    "my_calendar.js": {
-      "name": "my_calendar.js",
-      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\my_calendar.js",
-      "publicPath": "/static/my_calendar.js"
-    },
-    "library.js": {
-      "name": "library.js",
-      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\library.js",
-      "publicPath": "/static/library.js"
-    },
-    "edit_comedian.js": {
-      "name": "edit_comedian.js",
-      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\edit_comedian.js",
-      "publicPath": "/static/edit_comedian.js"
-    },
-    "search.js": {
-      "name": "search.js",
-      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\search.js",
-      "publicPath": "/static/search.js"
-    },
     "comedians.js": {
       "name": "comedians.js",
-      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\comedians.js",
+      "path": "C:\\Users\\Stas\\Code\\stand_up_tracker\\static\\bundles\\comedians.js",
       "publicPath": "/static/comedians.js"
-    },
-    "specials.js": {
-      "name": "specials.js",
-      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\specials.js",
-      "publicPath": "/static/specials.js"
-    },
-    "profile.js": {
-      "name": "profile.js",
-      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\profile.js",
-      "publicPath": "/static/profile.js"
     },
     "corporate_pages.js": {
       "name": "corporate_pages.js",
-      "path": "E:\\Code\\stand_up_tracker\\static\\bundles\\corporate_pages.js",
+      "path": "C:\\Users\\Stas\\Code\\stand_up_tracker\\static\\bundles\\corporate_pages.js",
       "publicPath": "/static/corporate_pages.js"
+    },
+    "edit_comedian.js": {
+      "name": "edit_comedian.js",
+      "path": "C:\\Users\\Stas\\Code\\stand_up_tracker\\static\\bundles\\edit_comedian.js",
+      "publicPath": "/static/edit_comedian.js"
+    },
+    "home.js": {
+      "name": "home.js",
+      "path": "C:\\Users\\Stas\\Code\\stand_up_tracker\\static\\bundles\\home.js",
+      "publicPath": "/static/home.js"
+    },
+    "library.js": {
+      "name": "library.js",
+      "path": "C:\\Users\\Stas\\Code\\stand_up_tracker\\static\\bundles\\library.js",
+      "publicPath": "/static/library.js"
+    },
+    "my_calendar.js": {
+      "name": "my_calendar.js",
+      "path": "C:\\Users\\Stas\\Code\\stand_up_tracker\\static\\bundles\\my_calendar.js",
+      "publicPath": "/static/my_calendar.js"
+    },
+    "my_specials.js": {
+      "name": "my_specials.js",
+      "path": "C:\\Users\\Stas\\Code\\stand_up_tracker\\static\\bundles\\my_specials.js",
+      "publicPath": "/static/my_specials.js"
+    },
+    "profile.js": {
+      "name": "profile.js",
+      "path": "C:\\Users\\Stas\\Code\\stand_up_tracker\\static\\bundles\\profile.js",
+      "publicPath": "/static/profile.js"
+    },
+    "search.js": {
+      "name": "search.js",
+      "path": "C:\\Users\\Stas\\Code\\stand_up_tracker\\static\\bundles\\search.js",
+      "publicPath": "/static/search.js"
+    },
+    "sidebar.js": {
+      "name": "sidebar.js",
+      "path": "C:\\Users\\Stas\\Code\\stand_up_tracker\\static\\bundles\\sidebar.js",
+      "publicPath": "/static/sidebar.js"
+    },
+    "specials.js": {
+      "name": "specials.js",
+      "path": "C:\\Users\\Stas\\Code\\stand_up_tracker\\static\\bundles\\specials.js",
+      "publicPath": "/static/specials.js"
     }
   },
   "chunks": {
-    "sidebar": [
-      "sidebar.js"
+    "comedians": [
+      "comedians.js"
     ],
-    "home": [
-      "home.js"
-    ],
-    "my_specials": [
-      "my_specials.js"
-    ],
-    "my_calendar": [
-      "my_calendar.js"
-    ],
-    "library": [
-      "library.js"
+    "corporate_pages": [
+      "corporate_pages.js"
     ],
     "edit_comedian": [
       "edit_comedian.js"
     ],
-    "search": [
-      "search.js"
+    "home": [
+      "home.js"
     ],
-    "comedians": [
-      "comedians.js"
+    "library": [
+      "library.js"
     ],
-    "specials": [
-      "specials.js"
+    "my_calendar": [
+      "my_calendar.js"
+    ],
+    "my_specials": [
+      "my_specials.js"
     ],
     "profile": [
       "profile.js"
     ],
-    "corporate_pages": [
-      "corporate_pages.js"
+    "search": [
+      "search.js"
+    ],
+    "sidebar": [
+      "sidebar.js"
+    ],
+    "specials": [
+      "specials.js"
     ]
   },
-  "publicPath": "/static/"
+  "publicPath": "/static/",
+  "error": "ModuleParseError",
+  "message": "Module parse failed: Unexpected character '�' (1:0)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n(Source code omitted for this binary file)"
 }

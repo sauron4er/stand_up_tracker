@@ -25,6 +25,6 @@ function Comedian(props) {
 
 Comedian.defaultProps = {
   comedian_index: -1
-}
+};
 
 export default view(Comedian);

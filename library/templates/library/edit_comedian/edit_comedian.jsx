@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useLayoutEffect} from 'react';
 import {store, view} from '@risingstack/react-easy-state';
 import editComedianState from './state';
 import UploadAndDisplayImage from 'components/form/image_uploader';
@@ -9,6 +9,10 @@ import {notify} from 'components/react_toastify_settings';
 import {SelectorAsync, TextInput, DateInput, Button} from 'components/form';
 
 function EditComedian() {
+  useLayoutEffect(() => {
+    editComedianState.setInitialState(window.comedian)
+  }, []);
+
   function onChange(e, field) {
     editComedianState[field] = e.target.value;
   }
@@ -63,6 +67,7 @@ function EditComedian() {
   // TODO фільтрація країни та стрімінга
   // TODO save and add another
 
+
   return (
     <>
       <div className='header'>
@@ -85,7 +90,7 @@ function EditComedian() {
           <DateInput date={editComedianState.died} fieldName='Died' onChange={(e) => onChange(e, 'died')} />
           <TextInput text={editComedianState.wiki} fieldName='Wikipedia link' onChange={(e) => onChange(e, 'wiki')} maxLength={200} />
         </div>
-        <UploadAndDisplayImage alt={editComedianState.name} onChange={onPictureChange} />
+        <UploadAndDisplayImage alt={editComedianState.name} onChange={onPictureChange} initial={editComedianState.picture} />
       </form>
       <br />
       <hr />

@@ -3,6 +3,10 @@
 {% block title %}Add or Edit Comedian{% endblock %}
 
 {% block content %}
+  <script>
+    window.comedian = {{ comedian|safe }};
+  </script>
+
   <div data-name='edit_comedian' id="bundle">
     <script type="text/javascript" src="{% static 'edit_comedian.js' %}"></script>
   </div>
