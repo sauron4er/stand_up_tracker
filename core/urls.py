@@ -4,8 +4,10 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.views.static import serve
 from core import settings
 
+
+
+# from django.conf import settings
 from django.conf.urls.static import static
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 from corporate_pages.views import subscribe, contact_us
 from library.views import search
@@ -31,3 +33,6 @@ urlpatterns = [
 
     path('', include('home.urls', namespace='home_from_blank')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

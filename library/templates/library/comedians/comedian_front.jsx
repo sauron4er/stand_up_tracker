@@ -36,9 +36,9 @@ function ComedianFront(props) {
     <div className='card__side card__side--front' style={{backgroundImage: `url(/media/${state.comedian.picture})`}}>
       <div className='outline'>
         <ExpandButton id={state.comedian.id} />
-        <If condition={window.is_staff}>
-          <EditButton id={state.comedian.id} />
-        </If>
+        {/*<If condition={window.is_staff}>*/}
+        {/*  <EditButton id={state.comedian.id} />*/}
+        {/*</If>*/}
         <div className='card__side--front__info'>
           <div className='card__side--front__footer'>
             <div className='card__side--front__name'>{state.comedian.name}</div>

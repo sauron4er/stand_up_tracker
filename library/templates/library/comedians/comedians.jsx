@@ -44,8 +44,6 @@ function Comedians() {
           <If condition={comediansState.expand_view}><div>expanded</div></If>
           <ul className='cards'>
             <For each='comedian' of={state.comedians} index='idx'>
-
-              {/*<div key={idx}>1</div>*/}
               <Comedian key={idx} comedian_index={idx} />
             </For>
           </ul>

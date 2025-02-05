@@ -69,11 +69,11 @@ function EditSpecial(props) {
           />
         </div>
         <div className='picture'>
-          <UploadAndDisplayImage
-            alt={editComedianState.specials[props.index].name}
-            onChange={onPictureChange}
-            id={`special_${props.index}`}
-          />
+          {/*<UploadAndDisplayImage*/}
+          {/*  alt={editComedianState.specials[props.index].name}*/}
+          {/*  onChange={onPictureChange}*/}
+          {/*  id={`special_${props.index}`}*/}
+          {/*/>*/}
         </div>
       </div>
     </>

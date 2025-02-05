@@ -10,6 +10,7 @@ import {SelectorAsync, TextInput, DateInput, Button} from 'components/form';
 
 function EditComedian() {
   useLayoutEffect(() => {
+    console.log(window.comedian);
     editComedianState.setInitialState(window.comedian)
   }, []);
 
@@ -28,12 +29,10 @@ function EditComedian() {
 
   function areSpecialsValid() {
     if (!editComedianState.specials.length) return false;
-    else {
-      for (const special of editComedianState.specials) {
-        if (!special.name) return false;
-      }
-      return true;
+    for (const special of editComedianState.specials) {
+      if (!special.name) return false;
     }
+    return true;
   }
 
   function postComedian(add_another = false) {
@@ -67,6 +66,7 @@ function EditComedian() {
   // TODO фільтрація країни та стрімінга
   // TODO save and add another
 
+  console.log(window.location.origin);
 
   return (
     <>
@@ -77,27 +77,32 @@ function EditComedian() {
         </a>
       </div>
       <hr />
-      <form className='comedian form'>
-        <div className='fields'>
-          <TextInput text={editComedianState.name} fieldName='Name' onChange={(e) => onChange(e, 'name')} maxLength={50} autofocus={true} />
+      <form className="comedian form">
+        <div className="fields">
+          <TextInput text={editComedianState.name} fieldName="Name" onChange={(e) => onChange(e, 'name')} maxLength={50}
+                     autofocus={true} />
           <SelectorAsync
-            url='get_countries'
-            fieldName='Country'
+            url="get_countries"
+            fieldName="Country"
             onChange={onCountryChange}
             value={{id: editComedianState.country, name: editComedianState.country_name}}
           />
-          <DateInput date={editComedianState.born} fieldName='Born' onChange={(e) => onChange(e, 'born')} />
-          <DateInput date={editComedianState.died} fieldName='Died' onChange={(e) => onChange(e, 'died')} />
-          <TextInput text={editComedianState.wiki} fieldName='Wikipedia link' onChange={(e) => onChange(e, 'wiki')} maxLength={200} />
+          <DateInput date={editComedianState.born} fieldName="Born" onChange={(e) => onChange(e, 'born')} />
+          <DateInput date={editComedianState.died} fieldName="Died" onChange={(e) => onChange(e, 'died')} />
+          <TextInput text={editComedianState.wiki} fieldName="Wikipedia link" onChange={(e) => onChange(e, 'wiki')}
+                     maxLength={200} />
+          <img alt="1" src={'../../../media/Ali_Wong.jpg'} />
+          {/*<img alt="1" src={require(`${window.location.origin}/media/${window.comedian.picture}`)} />*/}
+          <img alt="1" src={require(`${window.location.origin}/media/${window.comedian.picture}`)} />
         </div>
-        <UploadAndDisplayImage alt={editComedianState.name} onChange={onPictureChange} initial={editComedianState.picture} />
+          {/*<UploadAndDisplayImage alt={editComedianState.name} onChange={onPictureChange} initial={editComedianState.picture} />*/}
       </form>
       <br />
       <hr />
-      <EditSpecials />
+      {/*<EditSpecials />*/}
       <hr />
       <Button
-        text='Save'
+        text="Save"
         onClick={postComedian}
         disabled={
           !editComedianState.name ||

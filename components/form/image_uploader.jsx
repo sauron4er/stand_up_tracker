@@ -5,6 +5,8 @@ import {Button} from './submit_button';
 const UploadAndDisplayImage = (props) => {
   const [selectedImage, setSelectedImage] = useState(props.initial);
 
+  console.log(1);
+
   function addImage(e) {
     setSelectedImage(e.target.files[0])
     props.onChange(e.target.files[0])
@@ -15,10 +17,10 @@ const UploadAndDisplayImage = (props) => {
   }
 
   // console.log(`${window.location.origin}/${selectedImage}`)
-  console.log(`${window.location.origin}/files/media/${window.comedian.picture}`)
-  console.log(`url(/media/${window.comedian.picture})`)
+  // console.log(`${window.location.origin}/files/media/${window.comedian.picture}`)
+  // console.log(`url(/media/${window.comedian.picture})`)
 
-  //TODO how to retrieve jpg from django? Maybe edit static folder settings?
+  //TODO how to retrieve jpg from django? Maybe edit media folder settings?
 
   return (
     <div className="image_uploader">
